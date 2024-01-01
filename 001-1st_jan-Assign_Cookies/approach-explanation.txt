@@ -1,0 +1,1 @@
+Here we are using two variables i and j that will iterate through the arrays greed factor and size of cookies and will help us compare them in O[N] time. And as soon as we reach the end of size of cookie array, the array will terminate and we will return the number of children who got correct cookie size.

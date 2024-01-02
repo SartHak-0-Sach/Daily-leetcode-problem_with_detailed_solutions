@@ -1,0 +1,3 @@
+In this question, we need to convert an array into 2-d array, with the condition being that if there exists duplicates of an element, then they have to be pushed to next row in the array and only distinct integers can be present in the array.
+
+So with the same logic were are going to proceed solving this question in O(N) time complexity by understanding that as we traverse through the array and encounter a duplicate, we will push it in the next row of our 2-D array and when the traversal will be done, our final 2-D array will be ready.

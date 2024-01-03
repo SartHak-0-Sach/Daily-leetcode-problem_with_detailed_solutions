@@ -1,0 +1,2 @@
+Here we solved our problem using greedy approach.
+In this question we first simply converted the string into integers and took their sum. Then we will check if sum is zero or not. If it comes out to be not zero we will preserve its value in another variable named prevSum till we find another non zero sum row after which we will add sum*prevRow to our solution and so on.

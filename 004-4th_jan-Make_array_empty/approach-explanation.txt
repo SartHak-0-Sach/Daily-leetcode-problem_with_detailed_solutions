@@ -1,0 +1,7 @@
+It uses a map mp to calculate the frequency of each number in nums.
+
+If any number occurs only once in nums, it's impossible to achieve the desired pattern, so the function returns -1.
+
+It calculates the number of moves needed to make all occurrences of each number a multiple of 3. If there are remaining occurrences (not divisible by 3), it adds one more move for each such occurrence.
+
+Finally, it returns the total number of moves needed to achieve the desired pattern.

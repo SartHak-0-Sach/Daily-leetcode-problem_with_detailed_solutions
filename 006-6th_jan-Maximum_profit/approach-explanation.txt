@@ -1,0 +1,12 @@
+Intuition
+The code employs a dynamic programming approach to find the maximum profit by scheduling jobs. It uses binary search to efficiently find the next job that doesn't overlap with the current one.
+
+Approach
+Binary Search for Next Job: getnextjob() function finds the next job that doesn't overlap with the current job.
+Dynamic Programming: solve() function recursively solves the problem by choosing the current job and exploring the next non-overlapping jobs, storing the maximum profit in a dynamic programming array.
+Main Function: jobScheduling() initializes the job vector, sorts it based on start times, and initiates the recursive solving function.
+Complexity
+Time Complexity: The time complexity here is primarily dominated by the sorting operation, which is O(n log n) due to the sorting of jobs based on their start times. The binary search in getnextjob() takes O(log n), and the dynamic programming approach involves visiting each job once, resulting in O(n).
+Overall, the time complexity is O(n log n) due to sorting and O(n) due to the recursive solving function.
+Space Complexity: The space complexity arises from the dynamic programming array dp, which has a space complexity of O(n). Additionally, other variables used in the recursive functions have a constant space requirement.
+Therefore, the space complexity is O(n) due to the dynamic programming array.

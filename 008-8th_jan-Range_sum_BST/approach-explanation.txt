@@ -1,0 +1,14 @@
+Intuition
+The problem requires finding the sum of values of all nodes in a binary search tree (BST) that fall within a specified range. Since it's a BST, we can take advantage of its properties to efficiently identify the nodes within the given range.
+Approach
+To solve this problem, we can perform a depth-first search (DFS) traversal of the BST. At each node, we check whether its value falls within the specified range [low, high]. If the current node's value is within the range, we include it in the sum. We then recursively traverse the left and right subtrees.
+The algorithm follows these steps:
+1. If the current node is null, return 0.
+2. If the current node's value is within the range [low, high], include it in the sum; otherwise, exclude it.
+3. Recursively calculate the sum for the left subtree and the sum for the right subtree.
+4. Return the sum of the current node, left subtree sum, and right subtree sum.
+Complexity
+Time complexity:
+O(n)O(n)O(n), where n is the number of nodes in the tree. In the worst case, we may need to visit all nodes in the tree.
+Space complexity:
+O(h)O(h)O(h), where h is the height of the tree. This represents the maximum depth of the recursive call stack. In the worst case, for an unbalanced tree, the space complexity can be O(n)O(n)O(n), but for a balanced tree, it is O(logn)O(log n)O(logn).

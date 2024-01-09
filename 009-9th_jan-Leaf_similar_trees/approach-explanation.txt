@@ -1,0 +1,17 @@
+Intuition
+To solve this problem, we need to compare the leaf values of two binary trees. The idea is to perform a depth-first traversal of each tree and collect the leaf values in order. Once we have the leaf values for both trees, we can compare the sequences to check if they are similar.
+Approach
+1. Define a TreeNode class to represent the nodes of the binary tree.
+2. Implement a Solution class with a leafSimilar method to check if the leaf sequences are similar.
+3. Define a recursive helper function collect_leaf_values that takes a tree node and a list to collect the leaf values.
+4. In the helper function, if the current node is a leaf (has no left or right child), add its value to the list.
+5. Recursively call the helper function for the left and right children of the current node.
+6. Create empty lists leaf_values1 and leaf_values2 to store the leaf values of the two trees.
+7. Use the helper function to collect leaf values for both trees.
+8. Compare the two lists to check if the leaf sequences are similar.
+9. Return the result.
+Complexity
+Time complexity:
+O(n)O(n)O(n), where nnn is the total number of nodes in both trees. We visit each node once during the depth-first traversal.
+Space complexity:
+O(h1+h2)O(h1+h2)O(h1+h2), where h1h1h1 and h2h2h2 are the heights of the two trees. The space complexity is determined by the recursion stack during the depth-first traversal.

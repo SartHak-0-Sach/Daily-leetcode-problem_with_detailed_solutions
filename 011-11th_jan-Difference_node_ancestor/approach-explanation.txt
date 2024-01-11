@@ -1,0 +1,14 @@
+Intuition
+The goal is to find the maximum difference between the values of any ancestor and descendant nodes in a binary tree. To achieve this, we need to track the minimum and maximum values encountered during the traversal.
+
+Approach
+Initialize the minimum and maximum values to the root node's value.
+Traverse the tree using a recursive approach.
+Update the minimum and maximum values encountered during the traversal.
+At each node, calculate the difference between the current node's value and the updated minimum and maximum values.
+Update the global maximum difference if a larger difference is found.
+Recursively explore the left and right subtrees.
+Return the maximum difference after the traversal.
+Complexity
+Time complexity: The time complexity is O(N), where N is the number of nodes in the tree, as we visit each node once.
+Space complexity: The space complexity is O(H), where H is the height of the tree. In the worst case (unbalanced tree), the recursion stack could go as deep as the height of the tree.

@@ -1,0 +1,13 @@
+Intuition
+The problem involves counting the number of vowels in two halves of a string. A straightforward approach is to iterate through each character in both halves and count the vowels. Afterward, compare the counts to determine if the halves are alike.
+Approach
+1. Define a helper function count_vowels to count the number of vowels in a given string.
+2. Compute the length of the input string and find the midpoint.
+3. Split the string into two halves: the first half (first_half) and the second half (second_half).
+4. Use the count_vowels function to count the vowels in both halves.
+5. Compare the counts of vowels in both halves. If they are equal, return True; otherwise, return False.
+Complexity
+Time complexity:
+O(n)O(n)O(n), where nnn is the length of the input string. The function iterates through each character in the two halves to count the vowels.
+Space complexity:
+O(1)O(1)O(1), as the additional space used is constant, regardless of the input size.

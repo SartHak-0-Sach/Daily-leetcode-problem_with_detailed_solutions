@@ -1,0 +1,32 @@
+Approach:-
+
+Data Structures:
+
+Maintain three sets: zeroLoss, oneLoss, and moreLoss to keep track of the winners in different categories based on their losses.
+Processing Matches:
+
+Iterate through each match in the input vector matches.
+For each match, identify the winner and loser.
+Handling Winners:
+
+Check if the winner has zero losses (zeroLoss) and hasn't moved to oneLoss or moreLoss.
+If so, insert the winner into zeroLoss.
+Handling Losers:
+
+Determine the category of the loser based on their current status in sets.
+Move the loser from zeroLoss to oneLoss if they were in zeroLoss.
+Move the loser from oneLoss to moreLoss if they were in oneLoss.
+If the loser is already in moreLoss, skip.
+Building the Answer:
+
+Create a 2D vector answer with two rows: one for winners with zero losses and the other for winners with one loss.
+Populate the rows of answer with the winners from corresponding sets, sorted in ascending order.
+Return Result:
+
+Return the answer vector containing the winners in different categories.
+Complexity
+Time complexity:
+O(nlogn)
+
+Space complexity:
+O(n)

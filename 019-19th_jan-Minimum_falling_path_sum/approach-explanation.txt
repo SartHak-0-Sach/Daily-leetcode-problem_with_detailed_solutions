@@ -1,0 +1,24 @@
+Approach
+1. Dynamic Programming Table:
+
+A 2D DP table dp of the same size as the matrix is created to store the minimum falling path sums for each cell.
+2. Base Case Initialization:
+
+The first row of dp is filled with the corresponding values from the matrix's first row, as these are the initial path sums.
+3. Iterative Calculation:
+
+The code iterates through each cell from the second row to the last row:
+For each cell, it considers three possible paths from the previous row:
+Directly above (up), diagonally up-left (ld), and diagonally up-right (rd).
+It calculates the minimum sum for the current cell by adding the current cell's value to the minimum of these three paths.
+4. Final Result:
+
+After filling the dp table, the code finds the minimum value in the last row, representing the minimum falling path sum ending at any cell in the bottom row.
+Time Complexity:
+
+O(N * M), where N is the number of rows and M is the number of columns in the matrix.
+The nested loops iterate through each cell once.
+Space Complexity:
+
+O(N * M)
+The DP table dp uses additional space proportional to the size of the matrix.

@@ -1,0 +1,7 @@
+In this problem, we can use 3 methods to reach the answer explained from best to worst-
+
+1) Iterative approach- The best approach is to solve it iteratively in which we use 2 variables, one to update number of ways and the other to store number of ways calculated in previous iteration and these two variables being added together help us account for all number of ways to climb stairs by jumping either 2 steps or 1.
+
+2) memoization approach- In memoization, we do the exact same thing as we did in recursion, only difference is it is further optimised by remembering what number of steps we calculated for a number and store it in a dp array to access instead of recalculating it thus saving us a lot of unnecesary and repeatitive function calls.
+
+3) Recursion- In recursion, we simply do function calls and calculate the number of steps as asked in question. The only problem being is it is too repetitive and thus gives TLE.

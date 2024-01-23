@@ -1,0 +1,20 @@
+Approach 1: Bit Operation
+Intuition:
+The idea is to use bit manipulation to represent the presence of characters in a string.
+We use an integer to represent a set of characters where each bit corresponds to the presence of a character.
+By using bitwise operations, we can efficiently check for duplicate characters in a string.
+We iterate through the given array of strings, updating our bitset and checking for uniqueness.
+We maintain a dynamic programming list (dp) to store the bitsets of valid subsequences.
+Approach:
+Initialize dp list with a single element 0 (empty string).
+For each string s in the input array:
+a. Initialize variables a and dup.
+b. Iterate through characters in s:
+Update dup using bitwise OR to check for duplicate characters.
+Update a using bitwise OR to represent the set of characters in s.
+c. If dup > 0, continue to the next iteration as s has duplicate characters.
+d. Iterate through dp in reverse and update it by adding new bitsets.
+e. Update the result by finding the maximum length among valid subsequences.
+Complexity Analysis:
+Time Complexity: O(N * M), where N is the number of strings in the array and M is the maximum length of a string in the array.
+Space Complexity: O(2^M), where M is the maximum length of a string. The dp list can have up to 2^M elements.

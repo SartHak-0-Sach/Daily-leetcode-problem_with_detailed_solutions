@@ -1,0 +1,40 @@
+Appproach 1
+Use a depth-first search (DFS) with a stack to traverse the binary tree.
+Maintain a path variable to keep track of the occurrences of each digit using bitwise XOR.
+If a leaf node is reached, check if the current path is pseudo-palindromic.
+Pseudo-palindromic path condition: At most one digit should have an odd frequency.
+Use bitwise operations to efficiently handle digit occurrences.
+Increment the count if the pseudo-palindromic condition is satisfied.
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)
+
+
+
+Appproach 2-
+
+The function pseudoPalindromicPaths is the main entry point. It initializes the count of pseudo-palindromic paths and starts the recursive traversal.
+
+The recursive helper function countPseudoPalindromicPaths is called with the current node and the XOR path value.
+
+The XOR path is used to keep track of the occurrences of each digit in the current path.
+
+If the current node is null, return 0 as there are no paths to consider.
+
+XOR the current path with the value of the current node using path ^= (1 << node->val).
+
+If the current node is a leaf (both left and right are null), check if the path is pseudo-palindromic. If yes, return 1, otherwise return 0.
+
+Recursively calculate the count for the left and right subtrees by calling countPseudoPalindromicPaths with updated path values.
+
+Return the sum of counts from the left and right subtrees.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)

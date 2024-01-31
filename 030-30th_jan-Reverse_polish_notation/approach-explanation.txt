@@ -1,0 +1,18 @@
+Approaches:
+
+Stack for Operand Storage: Use a stack to store operands while iterating through the given list of tokens. When encountering an operand, push it onto the stack.
+
+Operator Handling: When encountering an operator, pop the top two operands from the stack, apply the operator, and push the result back onto the stack.
+
+Numeric Token Detection: Check whether the token is a numeric value or an operator. If it is a numeric value, convert it to a long and push it onto the stack.
+
+Resolving Operations: Define a helper function (resolves) to handle the arithmetic operations based on the encountered operator. Perform the operation on the top two operands and push the result back onto the stack.
+
+Final Result: After processing all tokens, the final result will be the only remaining element on the stack. Return this value as the result of the evaluation.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)

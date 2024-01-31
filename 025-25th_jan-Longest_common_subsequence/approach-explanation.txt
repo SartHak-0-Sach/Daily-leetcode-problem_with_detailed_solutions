@@ -1,0 +1,27 @@
+Approach-
+Function Structure:
+
+The main function longestCommonSubsequence is called with two strings text1 and text2`.
+It checks if the length of text1 is less than that of text2 and calls the helper function LCS accordingly.
+Helper Function LCS:
+
+This function computes the length of the Longest Common Subsequence (LCS) between two strings s1 and s2.
+It uses a 2D vector M to store intermediate results of subproblem solutions.
+Dynamic Programming:
+
+The outer loop iterates over the characters of s2, and the inner loop iterates over the characters of s1.
+The base case initializes the first column of M to 0, representing an empty string for s1.
+If characters at the corresponding positions match, it increments the length of LCS using the diagonal element.
+If characters don't match, it calculates the maximum LCS length from the left, above, and diagonal elements.
+Space Optimization:
+
+The 2D vector M is optimized to use only two rows by using the modulo operator for indexing.
+This reduces space complexity from O(m * n) to O(min(m, n)), where m and n are the lengths of the input strings.
+Complexity
+Time complexity:
+O(m∗n)
+(where m and n are the lengths of the input strings text1 and text2.)
+
+Space complexity:
+O(min(m,n))
+(where m and n are the lengths of the input strings text1 and text2.)

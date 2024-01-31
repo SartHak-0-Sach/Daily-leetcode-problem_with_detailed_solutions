@@ -1,0 +1,18 @@
+Approach:-
+Dynamic Programming:
+
+Use a 2D array dp to store the number of arrays with at most k inverse pairs for each size i and number of inverse pairs j.
+Initialize dp[0][0] to 1 as a base case.
+Recurrence Relation:
+
+For each i and j, iterate over x to compute the number of arrays with at most k inverse pairs.
+Update dp[i][j] based on the recurrence relation: dp[i][j] = (dp[i][j] + dp[i - 1][j - x]) % 1000000007.
+Result:
+
+The final result is stored in dp[n][k], representing the number of arrays with at most k inverse pairs for an array of size n.
+Complexity
+Time complexity:
+O(n∗k^2)
+
+Space complexity:
+O(n∗k)

@@ -1,0 +1,27 @@
+Approaches:
+
+Initialization:
+
+Initialize a 2D vector dp of size m x n to represent the number of ways to reach each cell.
+Set the starting cell (x, y) to 1, as there is one way to reach it initially.
+Counting Paths:
+
+Use a nested loop to iterate over the number of moves from 1 to N.
+For each cell (i, j) in the grid:
+If (i, j) is on the boundary, increment the count by the value of dp[i][j]. This accounts for paths going out of the grid.
+Update temp[i][j] based on the sum of the ways to reach the adjacent cells in the previous state (dp).
+Use modulo M to avoid integer overflow.
+Updating State:
+
+Update the dp vector with the values from the temp vector for the next iteration.
+Return Result:
+
+Return the final count, representing the total number of paths that lead out of the grid after N moves.
+Complexity
+Time complexity:
+O(Nmn)
+(dp array with dimensions m×nm \times nm×n NNN times)
+
+Space complexity:
+O(mn)
+(dp and temptemptemp array of size m×nm \times nm×n are used.)

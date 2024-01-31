@@ -1,0 +1,18 @@
+Intuition
+The key intuition here is to use the prefix sum technique to efficiently compute the sum of submatrices. The idea is to preprocess the matrix by calculating the cumulative sum of each row. Then, for any submatrix defined by two column indices c1 and c2, and two row indices row1 and row2, the sum of elements in this submatrix can be computed in constant time using the prefix sum array.
+
+Approach
+Preprocess the matrix to calculate the cumulative sum for each row. This is done by iterating through each row and updating each element to be the sum of itself and the previous element in the row.
+Iterate over all possible pairs of column indices c1 and c2.
+For each pair of column indices, iterate over all possible pairs of row indices row1 and row2.
+Calculate the sum of the submatrix defined by c1, c2, row1, and row2 using the preprocessed cumulative sum array.
+Use a HashMap to keep track of the frequency of each sum encountered so far.
+Check if the current sum minus the target value exists in the HashMap. If it does, increment the count by the frequency of that sum.
+Update the HashMap with the current sum.
+Return the final count as the result.
+Complexity
+Time complexity: O(m∗n2)
+where m is the number of rows and n is the number of columns. The nested loops iterate over all possible submatrices, and the inner loop involves constant time operations.
+
+Space complexity: O(n)
+where n is the number of columns. The space is used for the HashMap to store the frequency of sums encountered.

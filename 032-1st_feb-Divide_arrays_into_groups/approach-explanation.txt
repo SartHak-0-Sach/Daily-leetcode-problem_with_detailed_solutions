@@ -1,0 +1,20 @@
+Approach:
+
+Dividing into Groups of Three:
+
+The goal is to divide the given array into groups of three consecutive elements. This decision likely comes from the requirement or nature of the problem being solved.
+Sorting for Comparison:
+
+Sorting the array is done to simplify the process of comparing the elements within each group. When the array is sorted, the minimum and maximum elements for each group can be easily identified.
+Setting a Condition (k):
+
+The condition involving k is introduced to filter out groups based on the difference between the maximum and minimum elements within each group. This condition ensures that the elements in a group are within a certain range.
+Iterative Approach:
+
+The code iterates through the sorted array in steps of 3, forming groups and checking the condition for each group. If a group meets the condition, it is added to the result. If any group fails the condition, the function returns an empty result.
+Complexity
+Time complexity:
+O(nlogn)
+
+Space complexity:
+O(n)

@@ -1,0 +1,12 @@
+Approach:
+Iterate through starting digits from 1 to 9.
+For each starting digit, build a sequential number by adding consecutive digits until reaching 9 or exceeding the high value.
+Add valid sequential numbers to a vector (a).
+Sort the vector.
+
+Complexity
+Time complexity:
+O(1)
+
+Space complexity:
+O(1)

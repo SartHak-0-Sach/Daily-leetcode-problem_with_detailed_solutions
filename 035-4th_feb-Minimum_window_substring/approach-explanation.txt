@@ -1,0 +1,30 @@
+Approach:
+
+Problem Objective:
+
+The goal is to find the minimum window in string s that contains all the characters in string t in any order.
+Sliding Window Technique:
+
+Utilizes the sliding window technique where two pointers (l and r) represent the left and right ends of the current window.
+Counting Characters:
+
+dictT is used to count the occurrences of characters in string t.
+windowCounts keeps track of the characters within the current window.
+Maintaining the Window:
+
+Move the right pointer r to expand the window.
+Check if the characters in the current window satisfy the required counts from t.
+If satisfied, increment formed (count of characters satisfying the required counts).
+Shrinking the Window:
+
+Move the left pointer l to shrink the window.
+Update the minimum window size (ans) if a smaller valid window is found.
+Continue this process until a smaller valid window is not possible.
+Repeat until the right pointer r reaches the end of the string.
+Complexity
+Time complexity:
+O(s+t)
+(where s and t are the lengths of strings s and t.)
+
+Space complexity:
+O(s+t)

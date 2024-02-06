@@ -1,0 +1,19 @@
+Approach:
+
+Uses dynamic programming to find the maximum sum after partitioning an array.
+
+Initializing an array dp to store the maximum sum at each position.
+
+Iterating through the array from the end to the beginning. For each position, considering all possible partitions of the array.
+
+Within each partition, we calculates the maximum value and updates the dynamic programming array dp to store the maximum sum.
+
+The final result is stored in dp[0], representing the maximum sum after partitioning the entire array.
+
+Complexity
+Time complexity:
+O(n∗k)
+(where N is the size of the input array and K is the given parameter)
+
+Space complexity:
+O(k)

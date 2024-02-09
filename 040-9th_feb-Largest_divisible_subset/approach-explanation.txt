@@ -1,0 +1,18 @@
+Approach:
+
+Sort the Numbers: The first step is to sort the input array nums in ascending order. This is done to ensure that we only consider elements that come before the current element during the iteration.
+
+Dynamic Programming (DP) Approach: We use dynamic programming to find the length of the largest divisible subset ending at each index. We maintain dp array where dp[i] represents the length of the largest divisible subset ending at index i.
+
+Finding Divisible Subsets: For each element nums[i], we iterate through all elements before it (nums[j], where j < i) and check if nums[i] is divisible by nums[j]. If it is divisible and adding nums[i] to the subset results in a larger subset, we update the dp[i] value.
+
+Track Maximum Length: During the DP process, we keep track of the maximum subset length (maxi). This helps us identify the size of the largest divisible subset.
+
+Backtracking to Generate Subset: Once we have the maximum subset length, we iterate through the dp array from the end to reconstruct the largest divisible subset. We start from the element that corresponds to the maximum subset length and backtrack by adding elements to the result vector (v) while ensuring that each element divides the next element in the subset.
+
+Complexity
+Time complexity:
+O(n2)
+
+Space complexity:
+O(n)

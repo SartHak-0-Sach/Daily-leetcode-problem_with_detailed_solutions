@@ -1,0 +1,16 @@
+Approach:
+
+Initialization: The function initializes variables n (length of the input string s) and ans (to store the count of palindromic substrings). It checks if the length of the string is non-positive and returns 0 if true.
+
+Dynamic Programming: It creates a 2D boolean array dp of size n x n, where dp[i][j] indicates whether the substring from index i to j is a palindrome.
+
+Base Cases: It sets the diagonal elements of dp to true (single-letter substrings are always palindromes) and checks for double-letter substrings.
+
+Palindromic Substrings: It iterates over all substrings of length 3 to n, checking if each substring is a palindrome using dynamic programming. It updates the answer accordingly.
+
+Complexity
+Time complexity:
+O(n2)
+
+Space complexity:
+O(n2)

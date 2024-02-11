@@ -1,0 +1,23 @@
+Intuition:
+1st try uses recursive DP solution which has large time complexity.
+
+2nd approach is a bottom-up design, an iterative DP version, converted from the 1st one with space optimization by using & tick
+
+Think how to reduce the TC.
+
+Approach:
+This is a 3D array named dp used for memoization to store intermediate results of the dynamic programming solution.
+
+int f(int r, int c0, int c1, vector<vector<int>>& grid): This is a recursive function f that calculates the maximum number of cherries that can be picked starting from cell (r, c0) and (r, c1).
+
+ans is initialized based on whether the two pickers are on the same or different cells.
+The nested loops iterate over the possible next positions for both pickers and calculate the maximum cherries that can be picked from the next row.
+
+ans += next;
+
+Complexity
+Time complexity:
+O(row×col2)
+
+Space complexity:
+O(70^3)→O(70^2)

@@ -1,0 +1,20 @@
+Approach: (2 pointer)
+We're on a mission to find that elusive palindromic string! But remember, we only need one to solve the puzzle. Once we catch it, we're outta here!
+
+First up, we've got our trusty detective function named check(). It's on the lookout for any suspicious non-palindromic behavior in each string.
+
+Now, we're rolling up our sleeves for some two-pointer action! We're gonna compare the first and last characters of each string using the classic "good cop, bad cop" routine.
+
+If our check function finds a non-matching pair, it raises the alarm and returns false. But if it gives the all-clear, we know we're onto something good, and it signals true!
+
+With true in hand, we've got our palindromic suspect in custody! We're gonna proudly present it as the answer. And if false is the verdict, we'll keep sleuthing until we crack the case!
+
+This way, we'll nail that first palindromic string without breaking a sweat!
+
+Complexity
+Time complexity:
+O(N.M)
+(N is no. of words in the input array and M is the max length of a word)
+
+Space complexity:
+O(1)

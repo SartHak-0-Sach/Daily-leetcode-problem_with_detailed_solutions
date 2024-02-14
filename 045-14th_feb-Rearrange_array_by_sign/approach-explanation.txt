@@ -1,0 +1,11 @@
+Approach:
+Here we are directly putting values in the ans vector with the help of 2 pointer approach where initially both the indexes pos and neg are 0 and 1.
+If we encounter positive element then will put values in the ans vector with the help of ans[pos] = nums[i] and if found negative element then ans[neg] = nums[i].
+Here, we can't use ans.push_back() to add elements because we're not appending values sequentially. Instead, we're placing values at specific indexes based on the element we have.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)

@@ -1,0 +1,25 @@
+Approaches
+Used a unordered map mp to keep track of the frequencies.
+Seperately stored frequencies in a vector v and sort them.
+
+To get the array of minimum unique elements, there will be only 2 condition which we have to look after:
+
+First Condition (k > v[i]):
+
+If the remaining removal count k is greater than the current frequency v[i], it implies that we can completely remove all occurrences of the current element represented by v[i] from the array without exhausting k.
+In this case, we subtract v[i] from k (indicating that we have accounted for removing v[i] occurrences of the current element) and set v[i] to 0 (indicating that this element is fully removed).
+We do not increment the counter 'cnt' because the element v[i] has been fully removed.
+
+Second Condition (k <= v[i]):
+
+If the remaining removal count k is less than or equal to the current frequency v[i], it means that we can only partially remove the occurrences of the current element represented by v[i] from the array without exhausting k.
+In this case, we subtract k from v[i] (indicating that we have partially removed k occurrences of the current element) and set k to 0 (indicating that we have exhausted our removal count k).
+We increment the counter cnt because even though the element v[i] remains partially, it still contributes to the count of unique integers that need to be removed.
+
+Complexity-
+
+Time complexity:
+O(nlogn)
+
+Space complexity:
+O(n)

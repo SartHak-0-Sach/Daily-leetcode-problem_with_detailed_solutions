@@ -1,0 +1,13 @@
+Approach-
+
+Approach 1(Using Vectors)
+Will iterate over the nums and will put elements in the v vector(size of n+1).
+
+At last will iterate in v and will return index of the element which is still -1.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)

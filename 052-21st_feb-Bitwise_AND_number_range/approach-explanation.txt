@@ -1,0 +1,46 @@
+Approach:
+
+Common Prefix Identification:
+
+The function iteratively right-shifts both left and right until they become equal, identifying the common prefix of their binary representations.
+Counting Shifts:
+
+It counts the number of right-shifts performed, storing the count in the variable cnt.
+Bitwise AND Calculation:
+
+After finding the common prefix, it reconstructs the bitwise AND result by left-shifting the common prefix by cnt bits.
+Binary Representation:
+
+The binary representation of 5 is 101.
+The binary representation of 7 is 111.
+Identifying Common Prefix:
+
+Start from the rightmost bit and compare each corresponding bit
+of left and right.
+
+The common prefix is 10.
+
+Counting Shifts:
+
+During the iteration, both left and right are right-shifted by 1 bit
+ until they become equal.
+
+The number of shifts required is 1.
+
+Bitwise AND Calculation:
+
+After finding the common prefix 10, the function left-shifts
+ it by 1 bit.
+
+The result is 100, which is the bitwise AND of all numbers
+ in the range from 5 to 7.
+
+So, for the input left = 5 and right = 7, the function 
+returns 4 as the bitwise AND of all numbers in the range.
+
+Complexity
+Time complexity:
+O(logn)
+
+Space complexity:
+O(1)

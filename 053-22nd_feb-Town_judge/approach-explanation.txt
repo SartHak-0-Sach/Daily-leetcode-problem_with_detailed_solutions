@@ -1,0 +1,18 @@
+Approach:
+
+Initialization: Initialize two vectors, in and out, to store the in-degree and out-degree of each person.
+
+Counting Trust Relationships: Iterate through each trust relationship, incrementing the out count for the truster and the in count for the trustee.
+
+Finding the Judge: Iterate through each person, checking if they have an in-degree of N - 1 and an out-degree of 0, indicating they are trusted by everyone and trust no one.
+
+Return Value: Return the index of the judge if found, otherwise return -1.
+
+Overall Functionality: The function identifies the judge within a community based on trust relationships, leveraging counts of in-degree and out-degree.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)

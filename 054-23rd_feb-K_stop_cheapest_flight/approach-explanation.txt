@@ -1,0 +1,20 @@
+Approach
+
+Graph Representation: The function represents the flights as a graph using an unordered map, where each node represents an airport (flight[0]) and its outgoing edges represent flights to other airports (flight[1]) along with their prices.
+
+Initialization: It initializes a vector dist of size n with all elements set to INT_MAX, representing the minimum cost to reach each airport from the source airport. The cost to reach the source airport itself is set to 0.
+
+Breadth-First Search (BFS): It performs a BFS traversal starting from the source airport (src) to find the minimum cost to reach the destination airport (dst) with at most k stops.
+
+Queue Operations: During BFS traversal, a queue q is used to keep track of the current airport and the distance traveled so far. At each iteration, the function dequeues a node from the queue and explores its neighboring airports.
+
+Update Minimum Cost: For each neighboring airport, if the cost to reach it via the current airport is less than the previously calculated minimum cost, the function updates the minimum cost and enqueues the neighboring airport into the queue for further exploration.
+
+Complexity
+Time complexity:
+O(E∗K)
+(E is the number of flights and k is the maximum number of stops.)
+
+Space complexity:
+O(n)
+(V is the number of vertices (n) and E is the number of edges.)

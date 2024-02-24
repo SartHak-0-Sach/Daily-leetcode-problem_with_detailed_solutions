@@ -1,0 +1,18 @@
+The problem appears to involve finding all people who know a secret within a network of meetings. It seems that the solution involves traversing the meetings and maintaining a set of people who know the secret.
+
+Approach
+Sort the meetings based on their time.
+Iterate through the sorted meetings.
+For each meeting group at a specific time, construct a graph where nodes represent people and edges represent connections between people who attended the same meeting.
+Perform a breadth-first search (BFS) starting from the people who already know the secret within that meeting group.
+Add all encountered people during the BFS traversal to the set of people who know the secret.
+Repeat the process for each meeting group.
+Return the final set of people who know the secret.
+Complexity
+Time complexity:
+O(nlogn+m) where n is the number of meetings and m is the total number of attendees in all meetings.
+Space complexity:
+O(m), where m is the total number of attendees in all meetings.
+The space complexity arises from maintaining sets, graphs, and queues to store the information about attendees and their relationships.
+
+The time complexity is dominated by the sorting of meetings O(nlogn) and the BFS traversal O(m), where m is the total number of attendees in all meetings.

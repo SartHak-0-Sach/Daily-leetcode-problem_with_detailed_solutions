@@ -1,0 +1,15 @@
+Approach:
+Base Case Handling: Checks if both trees are empty. If so, returns true.
+Null Check: If one tree is empty while the other is not, returns false.
+Value Comparison: Compares the values of the current nodes in both trees.
+Recursive Calls: Recursively calls the function for left subtrees and right subtrees.
+Return: Returns true if all conditions hold true, indicating identical trees; otherwise, returns false.
+
+Complexity
+Time complexity:
+O(n)
+(n is the number of nodes in the tree)
+
+Space complexity:
+O(h)
+(h is the height of the tree)

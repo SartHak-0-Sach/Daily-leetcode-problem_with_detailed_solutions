@@ -1,0 +1,15 @@
+Intuition
+The code aims to find and return the leftmost value in the last level of a binary tree. The use of a deque and a level-order traversal suggests a breadth-first search (BFS) approach to efficiently traverse the tree level by level.
+
+Approach
+Initialize a deque queue with the root node and a variable leftmost_value to None.
+Perform a while loop while the queue is not empty:
+Dequeue a node from the left of the deque.
+Update leftmost_value with the value of the dequeued node.
+Enqueue the right child if it exists.
+Enqueue the left child if it exists.
+Continue the process until all nodes at the last level are processed.
+Return the leftmost_value.
+Complexity
+Time complexity: O(n)O(n)O(n), where nnn is the number of nodes in the binary tree. Each node is processed once during the level-order traversal.
+Space complexity: O(m), where mmm is the maximum number of nodes at any level in the binary tree. In the worst case, the queue would store all nodes at the maximum level.

@@ -1,0 +1,6 @@
+Approach
+Count Number of 1 bits. place (n-1) bits at the start of string and place the remaining 1 bit at the end of string to make the number odd.
+
+Complexity
+Time complexity: O(n)
+Space complexity: O(n)

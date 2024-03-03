@@ -1,0 +1,29 @@
+Approaches:
+
+Approach 1 (Radix Sort)
+Squared and stored the values in same array.
+Instead of using sort function, we are using radix sort to reduce complexity.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)
+
+Approach 2 (2 Pointer)
+1. Since the original array is not sorted, it's not guaranteed 
+    that the largest elements (in terms of absolute value) 
+    are at the ends of the array.
+
+2. By iterating backwards from the end of the array, we can 
+    start populating the result array from the end, ensuring 
+    that the squares of larger elements occupy the higher 
+    indices of the result array.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)

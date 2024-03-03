@@ -1,0 +1,15 @@
+Intuition
+The removeNthFromEnd function appears to remove the n-th node from the end of a singly-linked list.
+
+Approach
+Define a helper function length_ll to calculate the length of the linked list.
+Calculate the length of the linked list using the helper function.
+If the length is 1, return NULL since there is only one node, and removing it would make the list empty.
+If the length is equal to n, return head->next to remove the first node.
+Iterate through the list to reach the node before the one to be removed. Update the next pointer of this node to skip the n-th node.
+Return the modified head of the list.
+Complexity
+Time complexity:
+Time complexity: O(n), where n is the length of the linked list. The function iterates through the list once to calculate its length and then once more to remove the n-th node from the end.
+Space complexity:
+Space complexity: O(1), The function uses a constant amount of extra space regardless of the size of the input linked list.

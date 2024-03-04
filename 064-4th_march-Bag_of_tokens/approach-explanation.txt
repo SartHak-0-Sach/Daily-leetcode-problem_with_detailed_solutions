@@ -1,0 +1,39 @@
+Problem Statement
+You have an initial power P, an initial score of 0 points, and a bag of tokens where tokens[i] represents the value of the i-th token (0-indexed). Your goal is to maximize your total score by potentially playing each token in one of two ways:
+
+If your current power is at least tokens[i], you may play the i-th token face up, losing tokens[i] power and gaining 1 point.
+If your current score is at least 1, you may play the i-th token face down, gaining tokens[i] power and losing 1 point.
+Each token may be played at most once and in any order. You do not have to play all the tokens.
+
+Return the maximum number of points you can obtain.
+
+Approach
+To maximize the score, we'll start by sorting the tokens array. Then, we'll use two pointers left and right, where left starts from the beginning of the array and right starts from the end. We'll iterate through the array until left crosses right.
+
+During each iteration:
+
+If the token at index left can be played with the current power, we'll play it face up, increment the score, and move left to the next token.
+If the token at index right can be played face down, we'll play it face down, gaining power, decrementing the score, and move right to the previous token.
+If none of the above conditions are met, we'll exit the loop.
+We'll keep track of the maximum score achieved during the process.
+
+Sure, let's break down the intuition behind this problem in simple words:
+
+Intuition:
+
+We start with a power of 0 and a score of 0.
+We sort the tokens because it's easier to manage them this way.
+We have two strategies:
+If we have enough power, we'll spend tokens to gain points.
+If we have points, we'll spend them to gain power.
+We'll keep track of the maximum points achieved during this process.
+We'll iterate through the tokens using two pointers - one starting from the beginning and the other from the end.
+We'll keep moving the pointers based on whether we're spending tokens to gain points or spending points to gain power.
+We'll stop when we can't do either anymore.
+The maximum points achieved will be our answer.
+In essence, it's about smartly managing our resources (power and points) to maximize our score.
+
+Complexity Analysis
+- Time complexity: Sorting the tokens array takes O(n log n) time. The main while loop iterates over the array once, taking O(n) time. Thus, the overall time complexity is O(n log n).
+
+- Space complexity: Sorting the tokens array requires O(n) space. Other than that, the space complexity is O(1) as we use only a constant amount of extra space.

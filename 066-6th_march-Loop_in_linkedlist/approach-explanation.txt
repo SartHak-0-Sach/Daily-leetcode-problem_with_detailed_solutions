@@ -1,0 +1,15 @@
+Intuition
+Use 2 pointers slow & fast to detect the cycle. Floyd's Algorithm
+(Tortoise and Hare Algorithm)
+
+Approach
+If once fast==slow then there is a cycle, otherwise til null.
+In usual, the stride for slow is taken 1, and the stride for fast is taken 2.
+In 2nd approach, the stride for slow is taken 2, and the stride for fast is taken 3. since 2, 3 are coprime, if there is a cycle, fast & slow will meet.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(1)

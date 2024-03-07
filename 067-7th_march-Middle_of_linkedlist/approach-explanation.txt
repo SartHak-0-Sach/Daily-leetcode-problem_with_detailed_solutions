@@ -1,0 +1,20 @@
+Approach
+The given C++ code defines a class Solution that contains a method middleNode for finding the middle node of a singly-linked list. The linked list is represented using the ListNode structure, where each node has an integer value (val) and a pointer to the next node (next).
+
+Here's an explanation of the approach used in the middleNode method:
+
+1- Two pointers, slow and fast, are initialized to the head of the linked list.
+
+2- A while loop is used to traverse the list with the fast pointer moving two steps at a time and the slow pointer moving one step at a time.
+
+3- The loop continues until the fast pointer reaches the end of the list (i.e., becomes nullptr).
+
+4- Inside the loop, both fast and slow pointers are moved accordingly.
+
+5- The slow pointer will end up pointing to the middle node when the fast pointer reaches the end because it moves at half the speed of the fast pointer.
+
+6- Finally, the slow pointer is returned, which now points to the middle node of the linked list.
+
+Complexity
+Time complexity:0(n)
+Space complexity:0(1)

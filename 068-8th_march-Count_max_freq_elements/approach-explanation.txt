@@ -1,0 +1,20 @@
+Intuition
+It needs a container for storing the counting results
+
+2nd Approach is a 1 pass solution implemented in C++ which runs in 0ms & beats 100%.
+
+Approach:
+Since the constraints 1 <= nums[i] <= 100, an array of size 101 is suitable for solving problem, no need for a hash table(C++ unordered_map).
+
+Use a loop to count the frequencies storing in freq & max frequency maxF
+Use a loop to find the number f in freq with f==maxF & add it to ans
+return ans
+2nd approach is just to combine the 2 loops into one loop which is more compact written.
+
+Complexity:
+
+Time complexity:
+O(n+m) where m = ∣freq∣ ≤ max(nums) ≤ 100
+
+Space complexity:
+O(m)

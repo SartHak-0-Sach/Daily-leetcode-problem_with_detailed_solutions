@@ -1,0 +1,22 @@
+Approach: just keeping track of numbers by giving bool values we must know about the point that default values in map for bool is false.
+
+Approach Explanation:
+Data Structures Used: The code utilizes an unordered_map<int, bool> named mp1 to store the elements of the first input vector nums1. The key represents the element, and the value is set to true.
+
+Processing Input Vectors:
+
+First, the code iterates through nums1 and inserts each element into the unordered_map mp1, marking each element as present by setting its corresponding value to true.
+Then, it iterates through nums2.
+During the iteration over nums2, for each element it, it checks whether it exists in mp1 by querying mp1[it]. If mp1[it] is true, it means it exists in nums1 as well, and it returns it.
+Return Value:
+
+If a common element is found between nums1 and nums2, it returns that element.
+If no common element is found, it returns -1.
+Time Complexity Analysis:
+Inserting elements into mp1: Inserting elements from nums1 into the unordered_map mp1 takes O(N) time, where N is the number of elements in nums1.
+Searching for common element: For each element in nums2, the code performs a constant time lookup in mp1. If there are M elements in nums2, the worst-case time complexity for this step is O(M) in total.
+Overall Time Complexity: Considering both operations, the overall time complexity is O(N + M).
+Space Complexity Analysis:
+The space complexity is dominated by the space used by the unordered_map mp1, which stores the elements of nums1. Since it stores all elements of nums1, the space complexity is O(N), where N is the number of elements in nums1.
+Summary:
+The provided code efficiently finds the first common element between two input vectors nums1 and nums2. It uses an unordered_map to store elements of the first vector and then checks for common elements in the second vector. The time complexity is O(N + M), and the space complexity is O(N), where N and M are the sizes of the input vectors.

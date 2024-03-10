@@ -1,0 +1,13 @@
+Intuition
+Don't want to use set or unorderd_set, just lookat the constraints 1 <= nums1.length, nums2.length <= 1000 0 <= nums1[i], nums2[i] <= 1000, container bitset<1001> is very suitable
+
+Approach
+Find A,BA, BA,B which are implemented by bitset or boolean arrays
+Push back the elements in the intersection A∩BA\cap BA∩B to ans.
+Return ans.
+Complexity
+Time complexity:
+O(∣nums1∣+∣nums2∣)
+
+Space complexity:
+O(1)

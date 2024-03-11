@@ -1,0 +1,17 @@
+To solve this problem, let's first understand the problem statement. We are given two strings: order and s. The characters in order represent the desired order in which the characters of string s should appear. However, it's important to note that some characters in s might not be present in order. Our goal is to permute the characters of s so that they match the desired order specified in order.
+
+Intuition:
+
+When looking at the problem, we can observe that we need to rearrange the characters of s based on the order specified in order. To achieve this, we can utilize a hashmap to count the occurrences of each character in s. Then, we can iterate through the characters in order, appending the characters to the result string based on their count in s. Finally, we append any remaining characters from s to the result.
+
+Approach:
+
+Create a hashmap to count the occurrences of each character in s.
+Iterate through the characters in order. For each character:
+If the character exists in s, append it to the result string the same number of times it appears in s, and then erase it from the hashmap.
+After iterating through order, append any remaining characters from the hashmap to the result string.
+Return the result string.
+Complexity Analysis:
+
+- Time complexity: Since we iterate through order and s once, the time complexity is O(n), where n is the length of the string s.
+- Space complexity: We utilize extra space for the hashmap and the result string. The space complexity is O(n) due to the hashmap and the result string.

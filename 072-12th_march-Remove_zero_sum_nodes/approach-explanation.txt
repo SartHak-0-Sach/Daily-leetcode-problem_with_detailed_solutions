@@ -1,0 +1,12 @@
+Intuition
+The intuition behind this approach is to use the concept of prefix sum combined with a hash map. A prefix sum here represents the cumulative sum of the nodes from the start up to the current node. By storing these prefix sums and their corresponding nodes in a hash map, we can easily identify parts of the list that sum up to zero. When we encounter a prefix sum that we've seen before, it indicates that the sum of the nodes between the previous occurrence and the current node is zero, and those nodes can be removed.
+
+Approach
+Initialize a dummy head node (result) to simplify edge cases, such as when the starting elements of the list sum to zero.
+Traverse the linked list, calculating the cumulative or prefix sum of node values as you go.
+Use a hash map to keep track of the first occurrence of each prefix sum and the corresponding node.
+If a prefix sum is encountered that already exists in the map, it indicates the sublist from the next of the stored node up to the current node sums to zero. Remove this sublist by linking the stored node's next pointer to the current node's next.
+After adjusting pointers, continue traversing the list from the next node.
+Complexity
+Time complexity: O(n) - The entire list is traversed only once.
+Space complexity: O(n) - In the worst case, the hash map could store an entry for each node if no zero-sum sublists are found or if they are found at the end.

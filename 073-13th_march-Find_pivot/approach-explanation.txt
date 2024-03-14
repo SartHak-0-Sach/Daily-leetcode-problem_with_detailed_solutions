@@ -1,0 +1,17 @@
+Intuition
+This question is quite intuitive, if we take an example,
+
+Input: n = 8, Output: 6
+Explanation: 6 is the pivot integer since: 1 + 2 + 3 + 4 + 5 + 6 = 6 + 7 + 8 = 21.
+Observation: Let a be the original array, and S be the Prefix Sum array. Then nth prefix sum is S[n].
+
+S = [0, 1, 3, 6, 10, 15, 21, 28, 36]
+a = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+If we want to find an pivot integer x in the array, then it should meet the needs that S[x] == S[n] - S[x] + x
+
+Approach
+Step 1: We can get the total sum, through the formula n * (1 + n) / 2
+Step 2: Through the process of building the prefix sum array, we check the condition S[x] == S[n] - S[x] + x, when it is true, we can return the current index.
+Complexity
+Time complexity: O(n)
+Space complexity: O(1)

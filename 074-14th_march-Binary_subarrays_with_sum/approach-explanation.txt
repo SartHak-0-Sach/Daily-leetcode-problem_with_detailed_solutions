@@ -1,0 +1,14 @@
+Intuition
+To count the number of non-empty subarrays with a sum equal to the given goal, we iterate through the array while maintaining two pointers, i and j, representing the start and end of the subarray respectively. We update the goal variable based on the elements encountered and count the number of valid subarrays along the way.
+
+Approach
+Initialize variables i, count, and res to 0. i represents the start of the subarray, count keeps track of the number of subarrays with the sum equal to the goal, and res stores the total count.
+Iterate through the array using pointer j.
+If the current element nums[j] is 1, decrement the goal variable and reset count to 0.
+While goal is 0 and i is less than or equal to j, update goal by adding nums[i], increment i, increment count, and check if i exceeds j - goal + 1. If so, break the loop.
+While goal is less than 0, update goal by adding nums[i] and increment i.
+Add count to res.
+Return res as the result.
+Complexity
+Time complexity:O(n)
+Space complexity:O(1)

@@ -1,0 +1,22 @@
+Intuition
+Multiply all elements and divide it by respective element
+
+Approach
+Initialize a result array answers of the same size as the input array nums.
+Initialize two variables product and zeros to 1 and 0 respectively.
+Iterate through the nums array:
+If the current element is 0, increment the zeros count.
+Otherwise, multiply product by the current element.
+Iterate through the nums array again:
+If the current element is not 0:
+If zeros is greater than 1, push 0 into the answers array.
+Otherwise, push product divided by the current element into the answers array.
+If the current element is 0:
+If zeros is 1, push product into the answers array.
+Otherwise, push 0 into the answers array.
+Return the answers array.
+
+Complexity
+
+Time complexity:O(n)
+Space complexity:O(n)

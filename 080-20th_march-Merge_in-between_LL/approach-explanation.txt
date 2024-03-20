@@ -1,0 +1,14 @@
+Intuition:
+
+To solve this problem, we need to traverse list1 to find the nodes at positions a and b. Once we locate these nodes, we can splice list2 between them. We'll connect the node before position a to the head of list2, and the last node of list2 to the node after position b.
+
+Approach:
+
+Traverse list1 to find the node at position a-1, a, and b+1.
+Attach the last node of list2 to the node after position b.
+Attach the node before position a to the head of list2.
+Return the head of list1.
+Complexity:
+
+Time complexity: O(n), where n is the size of list1 since we traverse it once to find the positions.
+Space complexity: O(1), as we use a constant amount of extra space.

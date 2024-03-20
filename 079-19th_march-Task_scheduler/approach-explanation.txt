@@ -1,0 +1,13 @@
+Intuition
+To solve this problem efficiently, we aim to prioritize tasks with higher frequencies while respecting the cooling time constraint. By identifying the tasks' frequencies and organizing them accordingly, we can optimize the scheduling process.
+
+Approach
+Count the frequency of each task using an array.
+Sort the frequencies in descending order to prioritize tasks with higher frequency.
+Calculate the number of intervals needed based on the task 4. with the maximum frequency, considering the cooling time constraint.
+Return the total number of intervals required.
+Complexity
+Time complexity:Sorting the frequency array: O(26 log 26) ≈ O(1)
+Loop to calculate intervals: O(26) ≈ O(1)
+Overall: O(1)
+Space complexity:Array for frequency: O(26) ≈ O(1)

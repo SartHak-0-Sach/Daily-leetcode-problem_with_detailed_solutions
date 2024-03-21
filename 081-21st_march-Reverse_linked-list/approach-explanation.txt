@@ -1,0 +1,13 @@
+Intuition:
+Exercise for reverse Linked List.
+
+Approach
+Transverse the ListNode with pointer cur.
+Use 2 extra pointers prev & Next to reverse the Linked List.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(1)

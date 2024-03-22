@@ -4,3 +4,34 @@ To Check if the Given Linked List is palindrome or not , we can copy the data in
 Complexity
 Time complexity: O(N)
 Space complexity: O(N)
+
+Approach#2 ( Using Stack )
+First push all data in stack, and then traverse linked list and keep popping element from stack one by one, so stack will give you element from last.
+
+Complexities- same
+
+Approach#3 ( Using Recursion )
+As you know, if any problem you can do using stack only then you can use recursion as well ( mostly ).
+
+So we will have one global pointer as curr we will move this pointer once we reach the end and recursion will start from end of the list.
+
+Time complexity- same
+Space Complexity: o(1)
+
+Approach#4
+The main idea to check palindrome is , if the first and last elements are same or not and then check for second and second last.
+
+So I am thinking what if I create new linked list which would be reversed of the original linked list.
+
+And then I can compare each element one by one.
+
+But do I need the whole linked list to reverse and compare ?
+No, I just need the second half of linked list to be reversed.
+
+Now the question is how can I get the second half ?
+There are two approach
+
+Count all nodes first and then move to n/2th node, this would be middle node.
+Use two pointer one will move with the speed of 1 and one with the speed of 2, so when the fast pointer reaches the end, slow pointer would be at mid.
+After getting middle node, reverse the list after that node.
+and then compare each element.

@@ -1,0 +1,6 @@
+Approach ( Using List )
+To Check if the Given Linked List is palindrome or not , we can copy the data in list and then check if the list if palindrome or not.
+
+Complexity
+Time complexity: O(N)
+Space complexity: O(N)

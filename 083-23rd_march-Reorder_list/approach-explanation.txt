@@ -1,0 +1,17 @@
+Approach 2: (Tortoise and Hare method)
+Two pointer Approach Algorithm:
+
+First let's take two pointers name it as half and temp . temp is faster than half by 1.
+When temp reaches the end of linkedlsit half reaches the middle element .So this is how the linkedlist will get divided in two halfes as the center will become a dividing node .
+Now reverse the second half .
+After reversing the second half, merge the first half and second half.
+
+Approach 1: ( Using Stack)
+It starts by traversing the linked list and pushing each node onto a stack. This effectively reverses the order of nodes.
+Then it starts traversing the list again from the beginning.
+During this traversal, it pops a node from the stack, connects it to the current node in the traversal, and moves forward.
+It continues this process until it encounters a situation where the current node and the node at the top of the stack are the same, which indicates the mid-point of the list.
+At this point, it breaks the connection to the next node (to avoid cycles) and stops the process.
+Complexity
+Time complexity: O(n)
+Space complexity:O(n)

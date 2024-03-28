@@ -1,0 +1,14 @@
+Intuition
+My first thought when approaching this problem is to use a sliding window technique because we are dealing with finding the longest subarray with a given condition. Since we are required to find the longest subarray with each element's frequency less than or equal to k, we can use a sliding window to efficiently keep track of the frequency of elements within a subarray.
+
+Approach
+Initialize two pointers, l and r, to mark the left and right boundaries of the current subarray.
+Initialize an unordered_map to store the frequency of elements within the current subarray.
+Iterate through the array from left to right using the right pointer r.
+Increment the frequency of nums[r] in the map.
+If the frequency of nums[r] exceeds k, we need to shrink the window from the left until the frequency new inserted element decrease by one.
+Update the maximum length of the good subarray if necessary.
+Return the maximum length found.
+Complexity
+Time complexity:O(n)
+Space complexity:O(n)

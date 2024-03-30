@@ -1,0 +1,19 @@
+Intuition
+The problem requires counting the number of subarrays where the maximum element of the array appears at least k times. This can be approached using a sliding window technique.
+
+Approach
+Find max element.
+l,r starting and ending point of current window.
+Iterate through the array with the r pointer, decrementing k whenever the element at r equals the maximum element.
+When k becomes zero, it indicates that the frequency of the maximum element in the current window has reached to k.
+Increment the l pointer until the frequency of the maximum element in the window becomes k-1.
+During this process, count the number of subarrays that can be formed using the current window. This count is equal to the number of elements to the left of the window with the maximum element included.
+Add this count to the answer.
+Continue this process until the r pointer reaches the end of the array.
+
+Complexity:-
+
+Time complexity:O(n)
+Space complexity:
+O(1)
+O(n)

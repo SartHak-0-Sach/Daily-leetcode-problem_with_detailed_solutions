@@ -1,0 +1,13 @@
+Intuition
+To solve this problem, we need to find the last word in the string and return its length. We can achieve this by splitting the string into words and then returning the length of the last word.
+Approach
+1. Strip trailing whitespaces from the input string using the strip() method.
+2. Split the string into words using the split() method.
+3. If there are no words after stripping whitespaces, return 0.
+4. Otherwise, return the length of the last word, which is the last element in the list of words.
+Time complexity:
+1. Stripping trailing whitespaces takes linear time, so it's O(n) where nnn is the length of the input string.
+2. Splitting the string into words also takes linear time, so it's also O(n).
+3. The overall time complexity is O(n).
+Space complexity:
+We store the list of words, which could take up to O(n) space if all characters in the input string are non-whitespace.

@@ -1,0 +1,48 @@
+Imagine a shoe store where each customer needs a matching pair of shoes.
+
+Preparing:
+
+The store manager sets up empty shelves for left and right shoes (startPart and endPart).
+They get a list of all customers' shoe requests (char[] arr).
+They have a counter to track the number of customers who still need a left shoe (openParenthesesCount).
+
+First Pass: Finding Extra Right Shoes:
+
+The manager goes through the list one customer at a time.
+If a customer needs a left shoe (arr[i] == '('), they increase the counter.
+If a customer needs a right shoe (`arr[i] == ')'), they check:
+If no customers need left shoes (openParenthesesCount == 0), the right shoe is extra (arr[i] = '*'). They mark it for return.
+If there are customers needing left shoes, a pair is made, and the counter goes down.
+
+Second Pass: Finding Extra Left Shoes:
+
+The manager starts from the end of the list, looking for extra left shoes.
+If a customer needs a left shoe (arr[i] == '(') and there are still customers needing right shoes (openParenthesesCount > 0), the left shoe is extra. They mark it for return.
+
+Arranging the Shelves:
+
+The manager takes all non-marked shoes (arr[i] != '*') and puts them neatly on the shelves.
+
+Displaying the Shoes:
+
+They beautifully display the matching pairs from the shelves (result).
+
+Approach
+Initialization: Initialize pointers for the start and end of the string, variables to store the start and end parts of the string, and the final result. Convert the input string into a character array for easier manipulation.
+
+First Pass: Iterate through the string from left to right. Track the count of open parentheses encountered. If an excess closing parenthesis is encountered (i.e., a closing parenthesis with no matching opening parenthesis), mark it with '*'. Keep track of the count of open parentheses encountered.
+
+Second Pass: Iterate through the string from right to left. If there are excess opening parentheses remaining (i.e., opening parentheses with no matching closing parenthesis), mark them with '*'.
+
+Filtering: Filter out the marked characters ('*') from the character array, leaving only the valid parentheses.
+
+Construct Result: Construct the result string from the filtered character array.
+
+Return Result: Return the final result string, which contains the minimum number of parentheses required to make the input string valid.
+
+Complexity
+Time complexity:
+O(n) if using a stack and O(N^2) if doing in place changes
+
+Space complexity:
+O(n)

@@ -1,0 +1,12 @@
+Intuition 🦯
+To count the number of fixed-bound subarrays, we need to identify the subarrays where the minimum value is equal to minK and the maximum value is equal to maxK. We can iterate through the array and keep track of the indices of the last occurrence of minK and maxK. Then, for each index, we can calculate the number of fixed-bound subarrays ending at that index.
+Approach 🚀
+1. Initialize variables res to store the result, bad_idx to store the index of the last occurrence of a value outside the range [minK, maxK], and left_idx and right_idx to store the indices of the last occurrence of minK and maxK respectively.
+2. Iterate through the array nums and update the values of bad_idx, left_idx, and right_idx accordingly.
+3. For each index i, calculate the number of fixed-bound subarrays ending at i by taking the minimum of left_idx and right_idx, and subtracting bad_idx. Add this count to res.
+4. Return the final result res.
+Complexity
+Time complexity: ⏲️
+O(n), where n is the length of the nums array. We iterate through the array once.
+Space complexity: 🚀
+O(1), as we are using a constant amount of extra space for variables regardless of the input size.

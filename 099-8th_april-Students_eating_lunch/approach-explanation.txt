@@ -1,0 +1,9 @@
+Intuition
+We will not need to move to the next sandwich until there is a match and we will only keep pushing the next student to the end of the line.
+
+Approach
+Circular queues will be used so as to reduce the space complexity. The condition to exit the loop is incase we do not get any sandwiches that match the students after we have gone through each students once then it is not possible to make any changes and we will exit the loop. The value of the students array is changed once a match is found since we do not want to keep matching the same value again (That particular students has left the queue). We will then check for the number of students remaining in the queue which is all the 1s and 0s.
+
+Complexity
+Time complexity:O(n)
+Space complexity:O(1)

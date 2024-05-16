@@ -1,0 +1,18 @@
+We know that :
+ASCII value of uppercase alphabets – 65 to 90.
+ASCII value of lowercase alphabets – 97 to 122.
+
+so there are certain steps we have to take to grab the essence of it
+
+step 1: first we have to initialize a pointer flag which will cutoff the loop when there no lower,upper pair found
+
+step 2: we have to iterate throughout the loop and check whether there is any lower upper pair available,if yes delete it and continue the process.
+
+step 3:define a func which will check accordingly if a pair exists or not: thus we will have our output string .
+
+Ex.leEeetcode
+first iter: leEeetcode ->first pair found delete it
+second iter: leetcode -> no pair found hence return it as flag==1.
+
+Time complexity = O(N)
+space complexity = O(1)

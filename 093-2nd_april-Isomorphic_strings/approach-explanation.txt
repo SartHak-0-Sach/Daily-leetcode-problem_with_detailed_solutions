@@ -1,0 +1,35 @@
+Intuition
+Imagine two secret codes, same message but different letters. This code checks if the codes are the same, like matching letters in the same order but ignoring the actual letters themselves.
+
+Approach
+Imagine two secret messages that use different letters for the same words:
+
+Message 1: "apple"
+Message 2: "bbnbm"
+
+These messages are like isomorphic strings—they have the same structure, just different codes.
+
+Here's how the code checks if two strings are isomorphic:
+
+Prepare two counting tables:
+
+One for string s (like a tally for "apple")
+One for string t (like a tally for "bbnbm")
+Measure the length:
+
+If the messages are different lengths, they can't be the same secret message.
+Compare each letter, one by one:
+
+If a letter appears for the first time in both strings at the same position (like "a" and "b" both appearing first at position 0), make a tally mark for both strings in their respective tables.
+If a letter appears again, check if its previous position matches in both tally tables. If not, the messages have different codes and aren't the same secret message.
+Keep going until the end:
+
+If you finish comparing all letters and every letter matched up in both tally tables, the messages use the same code and are isomorphic!
+It's like playing a matching game with letters and their positions to see if the two messages have the same secret code!
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)

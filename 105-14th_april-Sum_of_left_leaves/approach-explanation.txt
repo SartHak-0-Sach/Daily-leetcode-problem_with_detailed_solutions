@@ -1,0 +1,15 @@
+Use recursive preorder to transverse.
+If an extra parameter isLeft=0 is set, the code becomes much simpler. The following is written in Python:
+
+def f(root, isLeft=False):
+    if not root: return 0
+    if not root.left and not root.right and isLeft: return root.val
+    return f(root.left, True)+f(root.right, False)
+Iterative DFS C & C++ codes are also provided using an array/vector as a stack; since C++ vector has all members for the stack. C array can implement a stack.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)

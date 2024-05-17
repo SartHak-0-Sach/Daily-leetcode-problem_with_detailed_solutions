@@ -1,0 +1,9 @@
+Approach
+To add a new row of nodes to the binary tree at a specified depth, we can perform a depth-first search (DFS) traversal of the tree. During the traversal, we keep track of the current depth of the node being visited. When we reach the specified depth, we create new nodes with the given value and insert them as children of the current node at the specified position (either left or right).
+
+Note: We are maintaining two boolean values(left and right) so that we can know in which side we need to add the below subtrees. If depth = 1, we need to keep the tree in the left side of the tree so we are passing left as true and right as false.
+
+Complexity
+Time complexity: O(N)
+Space complexity: O(N) {Recursive call stack}
+N is the number of nodes in the tree.

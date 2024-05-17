@@ -1,0 +1,92 @@
+🎯Problem Explaination:
+We have a 2D array matrix filled with 0's and 1's.
+We need to find the largest rectangle containing only 1's and return its area.
+🧠Thinking Behind the Solution:
+Let's break down the solution process into two distinct sub-processes: Processing Height Array and Max Area Calculation.
+
+1️⃣Processing Height Array✅:
+Initialization:
+
+Create an array height initialized with zeros, with length equal to the number of columns in the matrix. This array will represent the heights of bars in a histogram.
+Processing Each Row:
+
+For each row currRow in the 2D matrix:
+Traverse through each element of currRow.
+If the element is 1, increment the corresponding index in the height array.
+If the element is 0, reset the corresponding index in the height array to 0.
+2️⃣Max Area Calculation (Naive Approach)🤓:
+In a histogram, each bar has a certain height and width.
+We want to find the largest rectangle that can be formed using these bars, where the rectangle's height is determined by the minimum height among the bars it spans.
+Approach:
+
+Iterate over all possible pairs of bars (i, j) where i < j.
+For each pair (i, j), determine the minimum height h between the bars from index i to j.
+Calculate the area of the rectangle formed by this pair of bars, which is area = h * (j - i + 1).
+Keep track of the maximum area found during these iterations.
+
+Complexity:
+The naive approach examines all possible rectangles by iterating through each pair of bars in the histogram, resulting in a time complexity of O(n^3), where n is the number of bars.
+
+Optimization:
+To optimize, identify and address inefficiencies in the brute-force method. This involves recognizing repetitive calculations, such as repeatedly finding the minimum height between pairs of bars. We can use techniques like dynamic programming (DP) or stack-based methods to streamline the process and reduce unnecessary recalculations, ultimately improving efficiency and scalability for larger datasets.
+
+2️⃣Max Area Calculation (Using Stack-Based Approach)😎:
+Initialization:
+
+Initialize a stack stack to keep track of indices of bars in the histogram.
+Initialize max_area to store the maximum rectangle area found.
+Iterate Through Each Bar:
+
+Traverse each bar's height in the height array from left to right.
+Stack Operations:
+
+For each bar at index i:
+While the stack is not empty and the current bar's height (height[i]) is less than the height of the bar represented by the index on top of the stack (height[stack[-1]]):
+Pop the top index j from the stack.
+Calculate the area with the popped bar's height:
+h = height[j]
+w = i - stack[-1] - 1 (if stack is not empty), otherwise w = i
+area = h * w
+Update max_area with the maximum of max_area and area.
+Final Maximum Area:
+
+After processing all bars in the height array:
+Check if the stack is not empty:
+Pop each remaining index j from the stack and calculate the area similarly to step 3.
+Return Result:
+
+max_area will hold the value of the largest rectangle that can be formed within the histogram.
+
+Let's walkthrough🚶🏻‍♂️ the implementation process with an example for better understanding🎯:
+Let's walk through the code step by step with the input matrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]].
+
+Iteration 1:
+Current Row Array: ['1', '0', '1', '0', '0']
+Height Array: [1, 0, 1, 0, 0]
+Current Histogram:
+# #  
+Max Area: 1
+Iteration 2:
+Current Row Array: ['1', '0', '1', '1', '1']
+Height Array: [2, 0, 2, 1, 1]
+Current Histogram:
+# #  
+# ###
+Max Area: 3
+Iteration 3:
+Current Row Array: ['1', '1', '1', '1', '1']
+Height Array: [3, 1, 3, 2, 2]
+Current Histogram:
+# #  
+# ###
+#####
+Max Area: 6
+Iteration 4:
+Current Row Array: ['1', '0', '0', '1', '0']
+Height Array: [4, 0, 0, 3, 0]
+Current Histogram:
+#    
+#  # 
+#  # 
+#  # 
+Max Area: 6

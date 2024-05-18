@@ -1,0 +1,25 @@
+Breadth-First Search (BFS):
+Approach😎:
+Initialize: Traverse through each cell of the grid.
+BFS Traversal: When encountering a cell with the value 1 (indicating farmland) and not visited:
+Use BFS to explore the entire connected region of farmland starting from this cell.
+During BFS traversal, use a queue to process cells level by level.
+Keep track of the boundaries (min/max row and column) of the current region.
+Marking Farmland: Mark visited cells to avoid reprocessing.
+Recording Rectangles: Record the boundaries of each identified rectangle.
+Output: Once all regions are explored, return the list of identified rectangles.
+Algorithm😎:
+Initialize a queue (queue) to perform BFS and a set (visited) to keep track of visited cells.
+Iterate through each cell (i, j) in the grid:
+If land[i][j] is 1 and (i, j) is not visited:
+Initialize min_row, min_col, max_row, max_col to the current cell (i, j).
+Enqueue (i, j) into the queue and mark it as visited.
+While the queue is not empty:
+Dequeue a cell (cur_i, cur_j) from the queue.
+Explore its four neighboring cells (nx, ny) (up, down, left, right).
+If (nx, ny) is within the grid bounds and land[nx][ny] is 1 and not visited:
+Enqueue (nx, ny).
+Mark (nx, ny) as visited.
+Update min_row, min_col, max_row, max_col based on (nx, ny).
+After BFS completes for the current region, record the rectangle [min_row, min_col, max_row, max_col].
+Return the list of identified rectangles.

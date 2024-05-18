@@ -1,0 +1,14 @@
+Problem Explaination🎯:
+The Island Perimeter problem involves calculating the perimeter of an island represented by a 2D grid where 1 denotes land and 0 denotes water. Each cell of land contributes to the perimeter based on its surrounding neighboring cells.
+
+🔍 Methods To Solve This Problem:
+I'll be covering two different methods to solve this problem:
+
+Iterative Approach with Counting Borders
+Depth-First Search (DFS)
+1️⃣ Iterative Approach with Counting Borders:
+In this method, we iterate through each cell of the grid. For every cell that represents land (denoted by 1), we initially assume it contributes 4 units to the perimeter. Then, we adjust this count based on the neighboring cells.
+
+For each land cell (grid[r][c] == 1), add 4 to the perimeter count since the cell has four potential sides.
+Check the left neighbor (grid[r][c-1]) and the top neighbor (grid[r-1][c]). If either of these neighbors is also land (1), it means the shared side between the current cell and its neighbor is internal to the island and should not contribute to the perimeter. Therefore, we subtract 2 from the perimeter count for each such shared side.
+By iterating over all cells and adjusting the perimeter count accordingly, we can efficiently compute the total perimeter of the entire island.

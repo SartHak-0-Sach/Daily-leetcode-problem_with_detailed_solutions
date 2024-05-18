@@ -1,0 +1,11 @@
+Approach
+Approach is discussed in the comments given besides the code of the problem.
+
+Complexity
+Time complexity:
+O(N), 
+where N is the number of nodes
+Space complexity:
+O(1) Memory and 
+O(H) stack space, 
+where H is the height of the tree

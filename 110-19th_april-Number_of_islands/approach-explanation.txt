@@ -1,0 +1,20 @@
+Problem Explaination🎯:
+The Number of Islands problem involves finding and counting distinct clusters of connected '1's (representing land) in a 2D grid, where each '1' represents a piece of land and each '0' represents water.
+
+🔍 Methods To Solve This Problem:
+I'll be covering two different methods to solve this problem:
+
+Depth-First Search (DFS)
+Breadth-First Search (BFS)
+1️⃣ Depth-First Search (DFS):
+The DFS approach involves exploring each cell in the grid. When encountering a '1' (representing land), it signifies the start of a new island. The goal is to explore and mark all connected land cells (forming an island) using recursive DFS.
+
+DFS Function: Define a recursive DFS function that takes the grid and the current cell coordinates (i, j) as parameters.
+
+If the cell is out of the grid boundaries or not land ('1'), return.
+Mark the current cell as visited by changing it from '1' to '0'.
+Recursively call DFS for the neighboring cells (up, down, left, right) to explore and mark all connected land cells.
+Main Function:
+
+Iterate through each cell in the grid.
+When encountering an unvisited '1', increment the island count and trigger DFS to explore and mark all connected land cells belonging to this island.

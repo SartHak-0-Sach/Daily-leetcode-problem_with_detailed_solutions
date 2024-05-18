@@ -1,0 +1,37 @@
+🎯Problem Explaination:
+The Find if Path Exists in Graph problem involves determining whether there is a path between two given nodes (source and destination) in an undirected graph. The graph is represented by n nodes and a list of edges, where each edge specifies a connection between two nodes.
+
+Given:
+
+n: Number of nodes in the graph.
+edges: List of edges where each edge is represented as [u, v], indicating an undirected edge between node u and node v.
+source: The starting node for the path.
+destination: The target node to reach.
+Objective:
+You need to implement a solution that can determine if there exists a path from the source node to the destination node in the given graph.
+
+Output:
+Return True if there exists a path from source to destination, otherwise return False.
+
+🔍 Methods To Solve This Problem:
+I'll be covering four different methods to solve this problem:
+
+Depth-First Search (DFS)
+Breadth-First Search (BFS)
+Union-Find (Disjoint Set Union)
+Using Standard Graph Algorithms
+1️⃣Depth-First Search (DFS)🤓:
+Graph Representation:
+
+Construct an adjacency list representation of the graph using the given edges. This representation allows efficient traversal of nodes and their neighbors.
+Depth-First Search (DFS) Function:
+
+Implement a recursive DFS function (dfs) to traverse the graph starting from the source node.
+Use a visited set to keep track of nodes that have been visited during the traversal to avoid revisiting and potential infinite loops (cycles).
+Base case: If the current node being visited is the destination, return True as a path has been found.
+Recursive case: For each neighbor of the current node, if it has not been visited yet, recursively call dfs on that neighbor.
+If any recursive call returns True, propagate True back up through the call stack indicating that a path to the destination has been found.
+If the DFS traversal completes without finding a path to the destination, return False.
+Execution:
+
+Invoke the dfs function starting from the source node and return the result.

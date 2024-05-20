@@ -1,0 +1,24 @@
+Intuition
+Question is hard. Use DP to solve. edges is ignored!
+DP recurion+memo->tabular->optimized space
+
+Approach
+Let 0 be the root.
+Let f(i, c)=dp[i][c] denote the max sum from the root to i where c is the number (modulo 2) of XORing operations applied.
+
+The hardest part is to find the recursive relation between vertices i & i+1. Since LC says that this undirected graph is a tree, there exists always an path between i & i+1. An operation is applied, then 2 operations for XORing with k are done.
+
+# Let x=nums[i], consider not taking x^k , taking x^k
+f(i, c)= max(x+f(i+1, c),(x^k)+f(i+1,1-c)) 
+Xoring is performing in pair, for base case, let n=len(nums),
+
+if i==n:
+# invalid path, any negative integer with large enough absolute value
+    if c==1: return -(1<<31) 
+return 0 # base case
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)→O(1)

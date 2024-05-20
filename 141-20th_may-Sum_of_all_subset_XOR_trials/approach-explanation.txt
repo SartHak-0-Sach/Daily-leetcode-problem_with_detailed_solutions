@@ -1,0 +1,20 @@
+Intuition
+To solve the problem of finding the sum of XORs of all subsets of an array, we can use a recursive approach. By systematically including and excluding each element of the array in subsets, we can compute the XOR of each subset and sum them up.
+
+Approach
+Recursive Method:
+Create a helper function that will take the current index and the current XOR value.
+For each element at the current index, we have two choices: include it in the current subset or exclude it.
+Recursively call the helper function for both choices and sum the results.
+The base case for recursion is when the index reaches the end of the array, at which point we return the current XOR value.
+Initiate the Recursive Process:
+Start the recursion with the initial index as 0 and the initial XOR value as 0.
+Combine Results:
+The result for each recursive call is the sum of the XOR values from including and excluding the current element.
+Complexity
+Time complexity:
+
+The time complexity is (O(2^n)), where (n) is the number of elements in the input array. This is because each element has two choices (include or exclude), leading to (2^n) possible subsets.
+Space complexity:
+
+The space complexity is (O(n)) due to the recursive call stack depth, which is proportional to the number of elements in the array.

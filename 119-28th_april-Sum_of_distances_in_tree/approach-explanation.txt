@@ -1,0 +1,45 @@
+🎯Problem Explaination:
+Given a tree represented by its edges and the number of nodes n, the task is to find the sum of distances between all pairs of nodes in the tree.
+
+📥Input:
+n: An integer representing the number of nodes in the tree.
+edges: A list of lists representing the edges of the tree. Each sublist [u, v] indicates an edge between node u and node v.
+📤Output:
+A list of integers representing the sum of distances between all pairs of nodes.
+🧠Thinking Behind the Solution:
+Understanding the Problem: When I encountered the problem, it was clear that I needed to find the sum of distances from each node to all other nodes in the tree. This indicated that traversing the tree and gathering information about distances would be crucial.
+
+Properties of Trees: I recognized that in a tree, there exists only one path between any two nodes. This simplified the problem compared to a general graph.
+
+DFS for Tree Traversal: Given the nature of the problem and the structure of a tree, DFS felt like a natural choice for tree traversal. It allowed me to explore the tree deeply before backtracking, visiting each node exactly once.
+
+Counting Nodes and Distances: During my DFS traversal, I decided to keep track of two important pieces of information:
+
+count[node]: The number of nodes in the subtree rooted at node.
+res[node]: The sum of distances of all nodes in the subtree rooted at node.
+DFS to Calculate Counts and Distances: By recursively traversing the tree using DFS, I calculated count[node] and res[node] for each node. Starting from the root and moving downwards, I updated these values as I progressed.
+
+Second DFS for Adjustments: After the first DFS, I needed to adjust the res values to account for distances from each node to all other nodes. This adjustment was done in a second DFS traversal, where I updated the res values based on the counts calculated earlier.
+
+Handling Parent-Child Relationships: During DFS, it was crucial to avoid revisiting the parent node. I ensured this by checking if the current child node was not equal to the parent node.
+
+Returning the Result: Once both DFS traversals were complete, I had the required res values, representing the sum of distances for each node. I returned this as the final result.
+
+✅Approach:
+1. Building the Graph:
+First, we need to represent the tree as a graph. Since the problem specifies a tree, we know it's acyclic and has only one path between any two nodes. Hence, we can represent it as an undirected graph.
+We create an adjacency list representation of the graph using a dictionary (graph), where each node u is a key, and its adjacent nodes are stored in a list.
+2. DFS Traversal to Calculate Counts and Partial Distances:
+We perform a Depth-First Search (DFS) traversal starting from the root (node 0).
+During this traversal, we calculate two important pieces of information for each node:
+count[node]: The number of nodes in the subtree rooted at node.
+res[node]: The sum of distances of all nodes in the subtree rooted at node.
+We update these values as we traverse the tree recursively, going deeper into the tree structure.
+3. Second DFS Traversal for Adjustments:
+After the initial DFS traversal, we need to adjust the res values to represent the distances from each node to all other nodes.
+We perform a second DFS traversal starting from the root (node 0).
+During this traversal, for each child of a node node, we update its res value using the parent's res value. We subtract the count of nodes in the subtree rooted at the child (count[child]) and add the count of nodes not in the subtree (n - count[child]).
+This adjustment accounts for the distances from the current node to all other nodes in the tree.
+4. Return the Result:
+After both DFS traversals are complete, we have the required res values, representing the sum of distances for each node.
+We return this list of res values as the final result.

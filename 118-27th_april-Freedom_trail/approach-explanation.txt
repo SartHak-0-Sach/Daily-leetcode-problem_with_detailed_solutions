@@ -1,0 +1,10 @@
+Approach
+Store all the indices of ring in hashmap. When both ring[i] and key[j] are equal then you require only 1 step which is ofcourse pressing the button. Otherwise when ring[i] and key[j] are different then explore all the possibilities of reaching the index 'k' such that ring[k]=key[j], and there are always 2 options for reaching a particular k, first is clockwise and second is anticlockwise.
+Since we require min steps so we always take the minimum of two options available.
+
+Time complexity:
+O(N*M) + extra for loop for traversing the vector of indices.
+
+Space complexity:
+O(N*M)
+N = size of ring, M = size of key

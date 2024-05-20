@@ -1,0 +1,24 @@
+Intuition
+3 methods Greedy. At best 1 light+1 heavy can be in a boat.
+1 is using sorting, then 2-pointer
+2nd using counting sort to replace std::sort
+Later consider furthermore optimization.
+
+Since every one is <= limit. Each boat can transport at least 1, but at most 2.
+After sorting, use 2-pointer, in form of a loop with control variable r=people.size()-1...with the condition l<=r, for the Greedy process needs to check
+people[l]+people[r]<=limit
+if yes, the people[l] can go with people[r], so l++; otherwise this boat can carry only people[r].
+
+Let's consider the testcase=[1,2,3,4,5,8,9] 9.
+The Greedy process with 2-pointer is as follows:
+
+boat 1:9,
+boat 2:8,1
+boat 3:5,2
+boat 4:4,3
+Complexity
+Time complexity:
+sort+2-pointer: O(nlogn)
+Counting sort+2-pointer O(n+m)
+Space complexity:
+O(sort)

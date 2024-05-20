@@ -1,0 +1,35 @@
+🎯Problem Explanation:
+You're given a linked list where each node represents a digit of a non-negative integer. For instance, if the linked list is 1 -> 2 -> 3, it represents the number 123. Your task is to double this number and represent the result as a linked list.
+
+📥Input:
+The input consists of a linked list where each node contains a single digit from 0 to 9. The linked list is non-empty and does not contain any leading zeroes.
+
+📤Output:
+The output should be the head of the modified linked list after doubling the number it represents. The resulting linked list should also not have any leading zeroes.
+
+🔍 Methods To Solve This Problem:
+I'll be covering four different methods to solve this problem:
+
+Reversing the List
+Using Stack
+Recursion
+Two Pointers
+1️⃣Reversing the List🤓:
+🧠Intuition:
+The problem requires us to double the value represented by a given non-empty linked list without leading zeroes. To achieve this, we can reverse the linked list to simplify the doubling process. Once reversed, we traverse the list, doubling each node's value while keeping track of any carry generated. After the traversal, if there's still a carry, we append a new node to the list. Finally, we reverse the list again to restore its original order and return the result.
+
+📚Detailed Approach:
+
+Reverse the Linked List: The first step is to reverse the given linked list. Reversing the list simplifies the doubling process as it allows us to traverse the list from the least significant digit to the most significant digit.
+
+Traverse the Reversed List: Traverse the reversed linked list while maintaining two pointers - current and previous. Start with current pointing to the head of the reversed list and previous initialized to None.
+
+Double the Node Values: While traversing the list, double the value of each node and add any carry generated from the previous node.
+
+Update Node Values and Carry: Calculate the new value for the current node by doubling its value and adding any carry from the previous node. Update the value of the current node with the new value modulo 10 (to handle cases where the doubled value exceeds 9). Update the carry for the next iteration.
+
+Handle Carry: If there's still a carry after traversing the entire list, append a new node with the carry value to the end of the list.
+
+Reverse the List Again: Once all nodes are processed, reverse the list again to restore its original order.
+
+Return the Result: Return the head of the reversed and doubled linked list.

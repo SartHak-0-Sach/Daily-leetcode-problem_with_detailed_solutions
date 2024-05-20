@@ -1,0 +1,18 @@
+🎯Problem Explaination:
+We have to delete the given node from a singly-linked list without knowing its head or previous node. Given node is not tail node, so it will always have next node.
+
+Only question is hard to understand.
+This is the easiest "Leetcode-Medium" I have seen so far.
+Why is this Medium, not Easy?
+
+🤔 Intuition
+We know that previous node pointer to given node. What if we change given node value to next nodes and point next to next.next. It's essentially changing current node to next and deleting next.
+
+🧠 Approach
+To delete the given node, we copy the value of the next node to the current node and adjust the next pointer to skip the next node.
+
+Copy the value of the next node to the current node.
+Adjust the next pointer to skip the next node.
+📒 Complexity
+⏰ Time complexity: O(1), as we're only modifying the current node
+🧺Space complexity: O(1), no extra space is used.

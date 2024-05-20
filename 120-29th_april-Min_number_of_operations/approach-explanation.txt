@@ -1,0 +1,8 @@
+Approach
+he code calculates the minimum operations needed to make each bit of the binary representation of integers in the array equal to the corresponding bit of the target 'k'. It iterates through each bit, checking if XOR operation is required for matching bits, updating the answer accordingly.
+
+Complexity
+Time complexity:
+O(32*N)
+Space complexity:
+O(1)

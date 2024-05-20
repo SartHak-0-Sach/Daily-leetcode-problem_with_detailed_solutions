@@ -1,0 +1,6 @@
+Approach
+find the first occurence of ch and reverse word from beginning to ch and return the word.
+
+Complexity
+Time complexity: O(n)
+Space complexity:O(1)

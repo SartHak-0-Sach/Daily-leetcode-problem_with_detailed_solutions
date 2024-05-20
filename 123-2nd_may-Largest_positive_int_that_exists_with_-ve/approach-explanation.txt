@@ -1,0 +1,21 @@
+🎯Problem Explaination:
+You are given an array of integers. Your task is to find the largest positive integer in the array such that its negative counterpart also exists in the array. If such a pair exists, return the largest positive integer; otherwise, return -1.
+
+📥Input:
+An array of integers nums.
+Each integer nums[i] represents an element of the array.
+📤Output:
+An integer representing the largest positive integer satisfying the given condition. If no such integer exists, return -1.
+🔍 Methods To Solve This Problem:
+I'll be covering two different methods to solve this problem:
+
+Sorting
+Two Pointers
+1️⃣ Sorting:
+Approach🤓:
+Sort the array in ascending order.
+Iterate through the sorted array from the end.
+Return the first positive integer and its negative counterpart.
+Complexity🧑🏻‍🔬:
+⏰ Time complexity: O(n log n) due to sorting.
+🌌 Space Complexity: O(1)

@@ -1,0 +1,5 @@
+Intuition:
+The problem can be tackled using a variation of prefix sum, focusing solely on the parity of character counts. We employ bitwise XOR to construct a prefix sum of the string, where each prefix sum represents a bitmask of 10 different characters 'a'-'j'. By considering the ASCII values of these characters and extracting the 4 least significant bits using a bitwise AND operation (0b1111), we obtain values ranging from 1 to 10. We then use bit shifting to adjust the position of each character in the bitmask and update it using XOR operations.
+
+Approach:
+We maintain an array bitmapcount[1024] to count the occurrences of each possible bitmask value, considering that there are 2^10 = 1024 possible bitmask values within the range 0 to 2048 (inclusive), with a step of 2. We iterate through all possible bitmask values and calculate their corresponding count bmcount. For each bitmask value, we modify at most one bit and accumulate the counts, excluding the count of the bitmask itself, as substrings cannot be empty. Finally, we divide the accumulated count by 2, as each substring is counted twice.

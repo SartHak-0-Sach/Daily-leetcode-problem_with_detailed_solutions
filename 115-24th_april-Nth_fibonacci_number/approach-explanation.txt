@@ -1,0 +1,40 @@
+🎯Problem Explaination:
+The problem involves computing the N-th Tribonacci number, where the Tribonacci sequence is defined as follows:
+
+T(0) = 0
+T(1) = 1
+T(2) = 1
+T(n) = T(n-1) + T(n-2) + T(n-3) for n >= 3
+In other words, each Tribonacci number (starting from the fourth term onwards) is the sum of the previous three Tribonacci numbers.
+
+📥Input:
+The input to the problem is a single integer n representing the index of the Tribonacci number to be computed. The value of n is non-negative (i.e., n >= 0).
+
+📤Output:
+The output should be a single integer representing the N-th Tribonacci number.
+
+This problem can be solved using various methods such as recursive approaches, dynamic programming (with or without memoization), and iterative methods. The goal is to efficiently compute the N-th Tribonacci number given the sequence's defined rules.
+
+🔍 Methods To Solve This Problem:
+I'll be covering four different methods to solve this problem:
+
+Recursive Approach
+Dynamic Programming (Memoization)
+Iterative Approach (Dynamic Programming)
+Space-Optimized Iterative Approach
+
+Dynamic Programming (Memoization)😎:
+This approach uses dynamic programming with memoization to optimize the recursive solution. We define a helper function that recursively computes T(n) and stores already computed values in a dictionary (memo) to avoid redundant calculations.
+
+Detailed Steps:
+
+Use a memo dictionary to store already computed Tribonacci numbers.
+Define a recursive helper function that computes T(n):
+If n is in memo, return its value.
+Base Cases:
+If n == 0, return 0.
+If n == 1 or n == 2, return 1.
+Recursive Case:
+Compute T(n) recursively as T(n-1) + T(n-2) + T(n-3).
+Store the computed value in memo.
+Return the computed value.

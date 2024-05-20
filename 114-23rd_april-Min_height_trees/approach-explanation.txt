@@ -1,0 +1,18 @@
+Intuition
+Kahn’s Algorithm for Topological Sorting is for the directed graph.
+But modify it one can also solve the this undirected graph problem.
+
+Approach
+Instead of indegree in a directed graph, count the degree for every vertex.
+
+Build the adjacency list adj & compute the deg for each vertex.
+Push all vertices with deg=1 to the queue q
+Proceed BFS while the q is not empty, removing the edge connecting v, when the adjacent vetex w has deg(w)=1, push it to q. With a care look how many vertices are left. If none, the center are found.
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)
+
+Code degree+BFS =like topological sort Kahn's algorithm||75ms Beats 99.43%

@@ -1,0 +1,19 @@
+🤔 Intuition
+The problem asks us to find the length of the longest ideal string, where an ideal string satisfies two conditions:
+
+It is a subsequence of the given string 's'.
+The absolute difference in the alphabet order of every two adjacent letters in the string is less than or equal to 'k'.
+🛠️ Approach
+Initialize an array dp of size 27 to store the length of the longest ideal string ending at each character.
+Iterate through the string 's' from right to left.
+For each character, calculate the index in the array 'dp' based on its ASCII value and subtract 'a' (97) to get the index from 0 to 26.
+Determine the range of possible previous characters based on the value of 'k'.
+Iterate through this range and find the maximum value of 'dp'.
+Update 'dp' at the current character's index with the maximum value found plus 1.
+After processing all characters, find the maximum value in the 'dp' array, which represents the length of the longest ideal string.
+Return this maximum value as the result.
+Complexity 📊
+Time complexity:
+The loop iterates through the string 's' once, and for each character, it may iterate through a constant range of characters (bounded by 'k'). Therefore, the time complexity is O(n), where n is the length of the string.
+Space complexity:
+We use an array 'dp' of size 27 to store the lengths of ideal strings, which is constant space. Therefore, the space complexity is O(1).

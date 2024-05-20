@@ -1,0 +1,71 @@
+Approach
+Alright, listen up, you merc-loving maniacs! Let's break down this code in the most Deadpool-esque way possible :
+
+1. Sorting for Deals
+
+First things first, we gotta sort these workers based on their wage-to-quality ratio. Why? Because we want to hire the cheapest ones first, while still meeting the quality requirements. It's like picking the least expensive assassins, but with mad skills.
+
+2. Squad Upgrade Queue
+
+Next up, we create a priority queue to keep track of the highest quality workers we've hired so far. Think of it as a squad of elite mercenaries, and we're always looking to upgrade our team with better talent.
+
+3. Assembling the Starting Lineup
+
+We start by hiring the first k workers based on their wage-to-quality ratio. This gives us the initial cost and quality sum. It's like assembling our starting lineup of badasses.
+
+4. Trading Up
+
+Now comes the fun part! We iterate through the remaining workers and explore the possibility of replacing the lowest quality worker we've hired so far with a better one. It's like trading in a rookie for a seasoned vet.
+
+5. Deadly Swaps
+
+If we find a worker with a higher wage-to-quality ratio, we replace the lowest quality worker in our group with the new one. This way, we keep the overall quality sum high while potentially reducing the cost. It's like swapping out a cheap mercenary for a more expensive, but way deadlier one.
+
+6. Budget Check
+
+After each replacement, we recalculate the minimum cost based on the new quality sum and the highest wage-to-quality ratio among the hired workers. It's like tallying up the budget for our new and improved squad of assassins.
+
+7. Settling the Tab
+
+Finally, we return the minimum cost we've found throughout this process. It's like settling the tab for our ultimate team of hired guns, and getting the best bang for our buck!
+
+And there you have it, folks! A simple, yet effective way to hire the best workers while keeping the costs low. Just remember, if you ever find yourself in a situation where you need to assemble a team of skilled mercenaries, follow these steps, and you'll be golden! Now, let's go cause some chaos and mayhem!
+
+(Imagine Deadpool making a "mic drop" gesture and saying something like "That's how you hire the best team for the lowest price, folks!")
+
+Dry - Run :
+Input: quality = [10, 20, 5], wage = [70, 50, 30], k = 2
+
+Sort the workers based on wage-to-quality ratio:
+rate = [(2.5, 1), (6.0, 2), (7.0, 0)]
+
+Initialize maxHeap (priority queue), qualitySum = 0, maxRate = 0.0
+
+Hire the first k = 2 workers:
+i = 0: qualitySum = 20, maxRate = 2.5, maxHeap = [20]
+i = 1: qualitySum = 25, maxRate = 6.0, maxHeap = [20, 5]
+res = maxRate * qualitySum = 6.0 * 25 = 150.0
+
+Iterate through remaining workers (i = 2 to n-1):
+i = 2:
+maxRate = max(6.0, 7.0) = 7.0
+qualitySum = 25 - 20 + 10 = 15 (removed top of maxHeap and added quality[0])
+maxHeap = [10, 5]
+res = min(res, maxRate * qualitySum) = min(150.0, 7.0 * 15) = 105.0
+
+No more workers left, so return res = 105.0
+
+The key steps:
+
+First hire k lowest wage/quality workers
+Then see if remaining higher wage/quality workers can replace existing highest wage/quality worker while lowering cost
+So the output 105.00000 is correct:
+
+Hire worker 1 (quality 20) for wage 50
+Hire worker 2 (quality 5) for wage 30
+Replace worker 2 with worker 0 (quality 10, wage 70)
+Total cost = 50 + 70 * (10/20) = 105
+Complexity
+Time complexity: O(nlogn)
+
+Space complexity: O(n)

@@ -1,0 +1,52 @@
+Intuition
+It's like picking the tastiest ramen bowls from a buffet, starting with the yummiest, within a limit, ensuring each bowl adds to your overall satisfaction!
+
+Approach
+So, the problem aims to maximize the total happiness gained by selecting the happiest bowls of ramen within the given budget (k). It's all about enjoying the most happiness while savoring some tasty ramen! Let's break down the approach used in the code with Yuji Itadori's style:
+
+Sorting the Happiness Bowls: Just like picking the most delicious ramen bowls, we sort the bowls of happiness in descending order. This way, we can start with the happiest ones first!
+
+Eating the Yummiest Bowls: With a limited number of bowls we can eat (k), we start devouring the yummiest ones! Each time we eat a bowl, we check if it makes us even happier. If it does, we enjoy it; otherwise, we skip it.
+
+Adjusting Happiness Levels: As we eat the bowls, we also adjust the happiness levels of the remaining bowls. We subtract 1 from their happiness, but only if they were initially positive.
+
+Summing Up the Joy: After finishing our ramen feast, we sum up all the happiness from the bowls we've eaten. That's our total joy!
+
+So, it's all about picking the most happiness-packed bowls within our limit and making sure each bowl we eat adds to our overall joy. Just like enjoying a hearty ramen meal!
+
+Dry - Run :
+Let's dry run the example step by step:
+
+Initial State:
+
+Happiness: [1, 2, 3]
+k = 2
+Total happiness sum = 0
+Step 1:
+
+Sort the happiness array in descending order: [3, 2, 1]
+Pick the child with the highest happiness value (3).
+Subtract its index (0) from its happiness value: 3 - 0 = 3
+Add this to the total happiness sum: 0 + 3 = 3
+Decrease the happiness of the remaining children by 1: [2, 1, 0]
+Decrement k: k = 1
+Step 2:
+
+Pick the child with the next highest happiness value (2).
+Subtract its index (1) from its happiness value: 2 - 1 = 1
+Add this to the total happiness sum: 3 + 1 = 4
+Decrease the happiness of the remaining child by 1: [1, 0, 0]
+Decrement k: k = 0
+Step 3:
+
+Since k has reached 0, we stop.
+The total happiness sum is 4.
+Final Output:
+
+Total happiness sum = 4
+So, the output is 4, as explained in the example.
+
+Complexity
+Time complexity: O(nlogn + min(k, n))
+
+Space complexity: O(1)

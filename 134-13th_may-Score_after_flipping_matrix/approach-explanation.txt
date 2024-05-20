@@ -1,0 +1,26 @@
+Intuition
+By maximizing the number of set bits in the most significant bit positions, we can achieve maxximum possoble score.
+
+Approach: Greedy + Toggling
+Here's how the approach works:
+
+Initial Score Initialization: We initially assume that all the bits in the most significant position are set bits, which can be done by multiplying the number of rowws n with the value represented by the most significant bit (1 << (m - 1)).
+
+Column Toggling: We then iterate over the remaining columns (from the second column to the last column) to determine whether toggling (flipping) the entire column would increase the score or not.
+
+Value of the Current Column: We then calculate a value val for each column j represented by that column's bit position (1 << (m - 1 - j)).
+
+Counting Matching Rows: We then count the number of rows represented by set , where the value in the current column j matches the value in the first column (0 or 1) by iterating over all rows and comparing grid[i][j] with grid[i][0].
+
+To Toggle or Not: If the number of rows set is greater than or equal to n/2 (half the number of rows), its beneficial for us to not toggle (flip) the column. Otherwise, its better to toggle (flip) the entire column to increase the score.
+
+Updating the Score: We then update the res score by adding the maximum value between set * val (if the column is kept unchanged) and (n - set) * val (if the column is toggled), ensuring that the score is maximized by either keeping the current column unchanged or toggling it.
+
+Resulting Score: After iterating through all columns, we return the maximum score res.
+
+This approach works because toggling a row or a column affects all the bits in that row or column simultaneously. By ensuring that the most significant bits are set to 1 in as many rows as possible, and then adjusting the remaining columns based on the majority values, we can maximize the score of the matrix.
+
+Complexity
+Time complexity: O(n * m)
+
+Space complexity: O(1)

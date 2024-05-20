@@ -1,0 +1,17 @@
+Approach: Sliding Window
+Loop through each cell of the input grid except for the border cells.
+
+For each cell (non - border region), scan the 3x3 subgrid centered around it and find the maximum value.
+
+Store the maximum values in a result grid of size (n - 2) x (m - 2), excluding border cells at indices (i - 1, j - 1) which is a shift by 1 to match the problem's requiremnt that res[i][j]should correspond to the largest value of 3x3 matrix in the gird matrix centred around row i + 1 and col j + 1.
+
+Return the result grid containing the largest value of each contiguous 3x3 subgrid in the input grid.
+
+This approach efficiently identifies the largest value within each 3x3 subgrid centered around non-border cells in the input grid.
+
+And there you have it, my dear friends! Behold the magnificence of our newly crafted matrix, a testament to the beauty of mathematics! Ah, but let us not forget the thrill of discovery, the dance of numbers in their symphonic glory! Yohoho! Math may not have bones, but it sure does have soul!
+
+Complexity
+Time complexity: O(n^2)
+
+Space complexity: O(n^2)

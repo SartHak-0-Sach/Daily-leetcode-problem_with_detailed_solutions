@@ -1,0 +1,35 @@
+Intuition
+We perform a depth-first search from each cell containing gold, then explore all valid paths and backtrack to find the maximum gold that can be collected without revisiting cells.
+
+Approach
+Here's how the approach works:
+
+We Iterate through the grid to find cells with gold.
+
+For each cell with gold:
+
+a. We perform a depth-first search (DFS) starting from that cell.
+
+b. We mark the cell as visited to avoid revisiting before exploring it.
+
+c. Explore all four directions (up, down, left, right) from the current cell.
+
+d. In each direction, if the next cell is valid (within bounds, unvisited, and has gold), recursively call DFS from that cell.
+
+e. Keep track of the maximum gold collected in the current path.
+
+f. After exploring all paths, unmark the starting cell as visited to allow revisiting from other starting points.
+
+Update the overall maximum gold collected if the current path's gold is greater.
+
+Return the overall maximum gold collected from any starting cell.
+
+Some key points are:
+DFS to explore all paths from each starting cell.
+Marking cells as visited to avoid revisiting.
+Backtracking to explore all possible paths.
+Updating the maximum gold collected at each step.
+Complexity
+Time complexity:O(v * 3^v), where v is the number of non- zero cells
+
+Space complexity: O(n * m)

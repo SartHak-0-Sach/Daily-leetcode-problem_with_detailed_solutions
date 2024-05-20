@@ -1,0 +1,94 @@
+Intuition
+We precompute distances to thieves using BFS, then find the maximum safeness factor (minimum distance to any thief) along any path from (0, 0) to (n - 1, n - 1) using Dijkstra's algorithm with a priority queue.
+
+Approach: BFS + PQ + DIJKSTRA'S ALGO
+Here's how the approach works:
+
+Precompute Distances: We perform a BFS from all cells containing thieves to compute the minimum distance from each cell to the nearest thief. Store these distances in a separate 2D array score.
+
+Maximize 'Minimum' Distance: Then, to find the maximum safeness factor (minimum distance to any thief) along a path from (0, 0) to (n-1, n-1), model it as a shortest path problem with the objective of maximizing the minimum distance along the path.
+
+Dijkstra's Algorithm: We then use Dijkstra's algorithm with a priority queue, where the priority is the safeness factor (minimum distance to any thief). We start from (0, 0) with its safeness factor score[0][0].
+
+Priority Queue Traversal: Then, at each step, we dequeue the cell with the maximum safeness factor. If it's (n-1, n-1), we return the safeness factor. Otherwise, we enqueue its unvisited neighbors with the minimum of the current safeness factor and the neighbor's safeness factor score[newX][newY].
+
+Pruning: We use a separate 2D boolean array vis to mark visited cells and avoid revisiting them.
+
+Boundary Cases: If (0, 0) or (n-1, n-1) contains a thief, return 0 as the maximum safeness factor, cuz we gotta start from (0, 0) and end at (n - 1, n - 1).
+
+The combination of BFS preprocessing, Dijkstra's algorithm with a priority queue, and proper handling of boundary cases and visited cells provides an efficient solution.
+
+Dry - Run:
+Please give it a minute of reading, i have tried to make it as readable as possible:
+
+Input: grid = [[0, 0, 1], [0, 0, 0], [0, 0, 0]]
+
+First, we call the bfs function to compute the minimum distance from each cell to the nearest thief. This will initialize the score matrix with the minimum distances.
+
+bfs(grid, score, 3)
+Initial state:
+
+grid:
+ [0, 0, 1]
+ [0, 0, 0]
+ [0, 0, 0]
+
+score (initialized to INT_MAX):
+ [ INT_MAX, INT_MAX, INT_MAX ]
+ [ INT_MAX, INT_MAX, INT_MAX ]
+ [ INT_MAX, INT_MAX, INT_MAX ]
+The BFS starts from the thief cell (0, 2). It sets score[0][2] = 0 and pushes (0, 2) into the queue.
+
+queue: [(0, 2)]
+score:
+ [ INT_MAX, INT_MAX,       0 ]
+ [ INT_MAX, INT_MAX, INT_MAX ]
+ [ INT_MAX, INT_MAX, INT_MAX ]
+It then processes the neighbors of (0, 2), updating their scores and pushing them into the queue:
+
+queue: [(0, 1), (1, 2)]
+score:
+ [ INT_MAX,       1,       0 ]
+ [ INT_MAX, INT_MAX,       1 ]
+ [ INT_MAX, INT_MAX, INT_MAX ]
+Continuing the BFS:
+
+queue: [(0, 0), (1, 1), (1, 2), (2, 2)]
+score:
+ [       2,       1,   0 ]
+ [ INT_MAX,       2,   1 ]
+ [ INT_MAX, INT_MAX,   2 ]
+At the end of the BFS, the score matrix will be:
+
+score:
+ [ 2, 1, 0 ]
+ [ 3, 2, 1 ]
+ [ 4, 3, 2 ]
+This means that the minimum distance from any cell to the thief at (0, 2) is stored in the corresponding cell of the score matrix.
+
+Next, we initialize a priority queue with the starting cell (0, 0) and its score score[0][0] = 2.
+
+pq: [(2, (0, 0))]
+We process the neighbors of (0, 0), pushing them into the priority queue with the minimum of their scores and the current safeness factor (2):
+
+pq: [(1, (0, 1)), (2, (1, 0))]
+We continue processing the priority queue. The next cell to process is (0, 1) with a safeness factor of 1.
+
+pq: [(2, (1, 0))]
+However, since the target cell (2, 2) has not been reached, we process the neighbors of (0, 1), pushing them into the priority queue with the minimum of their scores and the current safeness factor (1):
+
+pq: [(1, (0, 0)), (1, (1, 1)), (2, (1, 0))]
+The next cell to process is (1, 1) with a safeness factor of 1.
+
+pq: [(1, (0, 0)), (2, (1, 0)), (2, (2, 1))]
+We continue processing the priority queue until we reach the target cell (2, 2) with a safeness factor of 2.
+
+pq: [(1, (0, 0)), (2, (1, 0)), (2, (2, 1)), (2, (2, 2))]
+Now that we have reached our destination which was (n - 1, n - 1), we will return the max safeness factor till now.
+
+thus, the output for this input is 2, as expected.
+
+Complexity
+Time complexity: O(n^2 * log(n))
+
+Space complexity: O(n^2)

@@ -1,0 +1,24 @@
+Intuition
+Use DFS (post-order) to distribute coins.
+
+The coding is easy, but thinking is not.
+
+Later try other approaches; an iterative post-order version is made.
+
+Approach
+
+The idea is that the child give x=(y-1) coins to parent, if he has y coins. (if y=0=> x=-1 then parent should give the child 1 coin)
+Add an extra parameter TreeNode* parent= NULL instead of a helper function.
+The number of moves comes from its left & right subtrees &
+When x>0 is to give, when x<0 is to obtain. So moves+=abs(x)
+Why not Pre-Order? Why Post-order?
+As the root of a subtree, it's unkown how many decendants it has before performing any kind of transversal. The thinking of parent-gives-coins-to-children will not work.
+
+Use post-order transverals, because every node has a parent except for the root. It works that children give coins to parents.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)

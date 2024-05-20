@@ -1,0 +1,13 @@
+Intuition
+Search for the required element and return NULL if you find the required leaf node.
+
+Approach
+Call for left element and store it.
+Recursively call for right element and store it.
+If left and right are NULL and the current element is equal to target element so it means we have found the element to remove, so simply return NULL. Now we have NULL as our left element.
+Now assign the value of left and right to root->left and root->right.
+Now, since we have to return the root element so return it.
+Complexity
+Time complexity: O(n)
+Space complexity:O(log n)
+(Because of recursive call)

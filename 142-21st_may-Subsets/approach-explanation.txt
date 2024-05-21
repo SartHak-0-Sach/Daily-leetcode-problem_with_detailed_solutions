@@ -1,0 +1,27 @@
+🎯Problem Explaination:
+Given a set of distinct integers, nums, return all possible subsets (the power set).
+Explanation:
+The problem asks to generate all possible subsets (the power set) of the given set of distinct integers. The subsets can contain any combination of integers from the input set, including the empty subset and the set itself.
+
+For example, for the input set [1, 2, 3], the output contains all possible subsets:
+
+[1], [2], [3] (single-element subsets)
+[1, 2], [1, 3], [2, 3] (two-element subsets)
+[1, 2, 3] (three-element subset)
+[] (empty subset)
+📥Input:
+A list of distinct integers, nums.
+📤Output:
+A list of lists containing all possible subsets of the input set nums, including the empty subset.
+🔍 Methods To Solve This Problem:
+I'll be covering three different methods to solve this problem:
+
+Backtracking (Recursive Approach)
+Bit Manipulation
+Iterative Approach (Generating All Subsets)
+1️⃣Backtracking (Recursive Approach)🤓:
+Use a recursive function to generate all subsets.
+At each step, decide whether to include the current element in the subset or not.
+Recur for the remaining elements after including and excluding the current element.
+Base case: When there are no more elements left, add the subset to the result.
+This approach builds subsets incrementally, including one element at a time.

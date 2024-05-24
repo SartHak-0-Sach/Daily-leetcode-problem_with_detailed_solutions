@@ -1,0 +1,9 @@
+Intuition
+Simply generate all the substrings using recursion and check if they are palindrome or not.If not Backtrack form there.Recursively traverse over the string like in dfs.
+
+Approach
+The idea is to keep track of the last partition index and to iterate from that index to the end of the array to check whether we can form a palindrome substring or not. If we are able to find such a substring we use recursion to continue exploring . If we reach the end whole string it means we were able to partition the string into x number of palindromes. Save the result and backtrack to continue exploring.
+
+Complexity
+Time complexity:(O(n∗2n)
+Space complexity:O(n)

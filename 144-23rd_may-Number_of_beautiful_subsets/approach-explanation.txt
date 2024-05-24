@@ -1,0 +1,4 @@
+In previous approaches, we were calculating in reverse direction (right to left) of sss. Due to this, we needed to convert sorted map to array first. It can be avoided if we traverse left to right.
+
+Time Complexity: O(nlogn)
+Space Complexity: O(n+k)

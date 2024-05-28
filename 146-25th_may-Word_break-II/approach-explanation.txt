@@ -1,0 +1,16 @@
+Intuition
+This problem is similar to rod cutting problem in which we have to make optimal cuts but in this we will be finding all the possible ways of cuts.
+
+Approach
+Step 1: Convert the given dictionary list into unordered_map so that we can optimally check whether the word exist in the dictionary or not.
+
+Step 2: Cut words from the given string and check whether it exist in the map or not.
+If it exist then call the solve function for remaining string
+else continue because if a word does not exist in the
+dictionary then its of no use.
+
+Step 3: Keep track of the current sentence by pushing and popping word from it.
+
+Step 4: If we reach at the end of givenString then we got 1 of our possible answers add it to the list of answers.
+
+Step 5: Return the answers.

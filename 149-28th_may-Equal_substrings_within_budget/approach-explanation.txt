@@ -1,0 +1,21 @@
+Intuition
+The problem requires finding the longest substring where the cost of converting it from s to t does not exceed maxCost. To achieve this, we can utilize a sliding window approach to dynamically adjust the size of the substring while ensuring the cost constraint is respected.
+Approach
+1. Initialize Variables:
+start to mark the beginning of the sliding window.
+current_cost to keep track of the total transformation cost of the current window.
+max_length to store the maximum length of a valid window found.
+2. Iterate through the String:
+Use end as the current end of the window.
+For each character at end, compute the cost to convert s[end] to t[end] and add it to current_cost.
+3. Adjust the Window:
+If current_cost exceeds maxCost, increment start to shrink the window from the left, subtracting the cost of the character at start from current_cost, until the total cost is within the allowed limit.
+4. Update the Maximum Length:
+After adjusting the window, compare its size (end - start + 1) with max_length and update max_length if the current window is larger.
+5. Return the Result:
+The maximum valid window length found during the iteration is returned as the result.
+Complexity
+Time complexity:
+O(n), where n is the length of the string s (or t). This is because each character is processed at most twice (once when expanding the window and once when shrinking it).
+Space complexity:
+O(1), as we are using a constant amount of extra space regardless of the input size.

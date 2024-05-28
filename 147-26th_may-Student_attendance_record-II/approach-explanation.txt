@@ -1,0 +1,15 @@
+Intuition
+Use DP to solve! 3D DP question.
+
+Approach
+For a fast code implementation, C-array is in use.
+
+recursion+ memo , top-down design
+Convert it into iteration, bottom-up design
+Use &1 trick to reduce the space & obtain a fast code
+Complexity
+Time complexity:
+O(6n)
+
+Space complexity:
+O(105)→O(6)

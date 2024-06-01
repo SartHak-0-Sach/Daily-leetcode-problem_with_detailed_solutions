@@ -1,0 +1,40 @@
+🎯Problem Explaination:
+The problem is to compute the score of a given string s. The score is calculated based on the absolute differences between the ASCII values of each pair of adjacent characters in the string. Here's a explanation to it:
+
+Understanding ASCII Values: Each character in the string has an ASCII value, which is a numerical representation of the character. For example, the ASCII value of 'a' is 97, and the ASCII value of 'b' is 98.
+
+Adjacent Characters: Two characters are adjacent if they are next to each other in the string. For example, in the string "abc", the pairs of adjacent characters are ('a', 'b') and ('b', 'c').
+
+Absolute Difference: The absolute difference between two numbers is the non-negative difference between them. For example, the absolute difference between the ASCII values of 'a' (97) and 'b' (98) is |97 - 98| = 1.
+
+Score Calculation: To calculate the score of the string, sum the absolute differences between the ASCII values of all adjacent character pairs in the string.
+
+📥Input
+A single string s which can contain any printable ASCII characters.
+📤Output
+An integer representing the score of the string s.
+✅Approach:
+Initialization: Start with score = 0.
+Loop Through the String: Use a loop that runs from the first to the second last character.
+Calculate and Update: In each iteration of the loop, calculate the absolute difference between the current character and the next character, and add this difference to score.
+Return the Score: After the loop, return the accumulated score.
+Let's walkthrough🚶🏻‍♂️ the implementation process with an example for better understanding🎯:
+Let's walk through the code step by step with the input s = "abcd".
+
+ASCII Values:
+
+'a' = 97
+'b' = 98
+'c' = 99
+'d' = 100
+Adjacent Pairs and Differences:
+
+('a', 'b'): |97 - 98| = 1
+('b', 'c'): |98 - 99| = 1
+('c', 'd'): |99 - 100| = 1
+Sum of Differences:
+
+1 (from 'a' and 'b') + 1 (from 'b' and 'c') + 1 (from 'c' and 'd') = 3
+Final Score:
+
+The final score for the string "abcd" is 3.

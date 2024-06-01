@@ -1,0 +1,46 @@
+Intuition
+Let XOR=xor(nums), Due to LC:
+
+exactly two elements appear only once and all the other elements appear exactly twice.
+
+=>XOR=A^B where {A, B} is the wanted answer
+
+Find least bit=1 for XOR(in fact any significant bit for XOR is fine)
+Divide nums in 2 groups
+
+Several variants in this post, some of them are described in comments.
+
+Approach
+Compute the XOR by using accumulate or a for-loop
+Find the least significant bit for XOR by using a loop or & with its negation or other bit manipulation tricks (be careful for overflowing)
+Accoriding the condition ((x >> i) & 1) == 0, find A & B by using xoring with element x in nums
+the answer is {A, B}
+The testcase [1,1,0,-2147483648] makes the situation a little bit complicated, the easiest way is using loop for finding the least significant bit for XOR.
+
+Math proof
+Let x0,x1,⋯xn−1x_0, x_1, \cdots x_{n-1}x 
+0
+​
+ ,x 
+1
+​
+ ,⋯x 
+n−1
+​
+  be elements in nums. Due to LC
+
+exactly two elements appear only once and all the other elements appear exactly twice.
+
+The xoring is associative, abelian & x∧x=0x\wedge x=0x∧x=0 which cancels out the identical pairs
+  ⟹  \implies⟹ XOR=A^B where {A, B} is the wanted answer
+Suppose S=2iS=2^iS=2 
+i
+  is any significant bit in XOR. Then the array nums can be splitted into 2 groups according to x&S; A & B are in different groups, say G0, G1, any identical 2 elements will be in the same group.
+So A=xor(G0), B=xor(G1) by using x∧x=0x\wedge x=0x∧x=0. Q.E.D.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(1)

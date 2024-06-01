@@ -1,0 +1,19 @@
+Approach
+Initialize Variables:
+
+n: The length of the binary string.
+ans: The number of steps required, initialized to n - 1 (since each bit contributes at least one step).
+carry: To handle the carry during the addition operation, initialized to 0.
+Iterate through the Binary String from Right to Left:
+
+For each bit in the string (from the least significant bit to the second most significant bit), check if the bit plus the current carry is 1.
+If it is 1, it means we have an odd number, and we need to add 1, which introduces a carry for the next bit. Increment the ans by 1 and set carry to 1.
+If it is 0, continue to the next bit.
+Return the Result:
+
+After the loop, return ans + carry to account for any remaining carry.
+Cases
+Even Case:
+If bit + carry == 0, the number is even. We divide by 2, no additional steps needed.
+Odd Case:
+If bit + carry == 1, the number is odd. We add 1 to make it even, increment steps, and set carry for the next bit.

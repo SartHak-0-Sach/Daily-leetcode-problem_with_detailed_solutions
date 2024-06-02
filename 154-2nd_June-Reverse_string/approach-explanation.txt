@@ -1,0 +1,7 @@
+Approach
+using two pointer
+
+Complexity
+Time complexity:O(n)
+Space complexity:
+0(1)

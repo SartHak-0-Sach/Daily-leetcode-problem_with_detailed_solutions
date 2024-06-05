@@ -1,0 +1,19 @@
+Intuition
+Count Frequency in All Words:
+For each character, count how many times it appears in each word.
+Minimum Frequency Across Words:
+For each character that appears in all words, take the minimum count across all words. This will ensure that only the common occurrences are considered.
+Result Construction:
+Use the minimum counts to construct the list of common characters, including duplicates.
+
+Approach
+Initialize Frequency Array:
+Create a frequency array min_freq to store the minimum frequency of each character across all words. Initialize it to a large number (since we will be looking for the minimum).
+Update Frequencies:
+For each word, count the frequency of each character and update the min_freq array accordingly.
+Build Result:
+Traverse the min_freq array and construct the result based on the minimum frequency values.
+
+Complexity
+Time complexity: O(N x M)
+Space complexity: O(1)

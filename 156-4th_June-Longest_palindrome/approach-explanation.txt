@@ -1,0 +1,73 @@
+🎯Problem Explaination:
+The problem is to find the length of the longest palindrome that can be constructed using the characters from a given string.
+
+A palindrome is a sequence of characters that reads the same backward as forward. For example, "racecar" and "level" are palindromes.
+
+📥Input
+A single string ( s ) containing only lowercase and/or uppercase English letters.
+📤Output
+An integer representing the length of the longest possible palindrome that can be formed with the characters of the given string.
+🧠Thinking Behind the Solution:
+The idea behind the solution is to use a set to help us count pairs of characters, and then determine if we can have a single middle character in our palindrome. Here's the thought process:
+
+Initialize a Set:
+
+We start with an empty set. This set will help us keep track of characters that appear an odd number of times.
+Iterate Over the Characters:
+
+For each character in the string, we check if it is already in the set.
+Check for Pairs:
+
+If the character is in the set, it means we have found a pair (one character we saw earlier plus this one).
+We remove this character from the set because we have used up the pair.
+We increase our palindrome length by 2 because a pair of characters can be placed symmetrically in the palindrome (one on the left side and one on the right side).
+Track Odd Characters:
+
+If the character is not in the set, we add it to the set. This means we have seen this character once, and it might be part of a pair if we see it again later.
+Check for Middle Character:
+
+After processing all characters, if there are any characters left in the set, it means these characters appear an odd number of times.
+We can use one of these characters as the middle character of the palindrome (since a palindrome can have one character in the center without a pair).
+Calculate the Length:
+
+The total length of the palindrome will be the number of pairs we found (each pair contributes 2 to the length).
+If we have any characters left in the set, we add 1 to the length for the single middle character.
+Let's walkthrough🚶🏻‍♂️ the implementation process with an example for better understanding🎯:
+Let's take the string "abccccdd" as an example:
+
+Initial State:
+
+Set: {}
+Process Each Character:
+
+'a' is not in the set. Add 'a'. Set: {'a'}
+'b' is not in the set. Add 'b'. Set: {'a', 'b'}
+'c' is not in the set. Add 'c'. Set: {'a', 'b', 'c'}
+Another 'c'. It's already in the set. Remove 'c'. Increase length by 2. Length: 2. Set: {'a', 'b'}
+Another 'c'. Add 'c'. Set: {'a', 'b', 'c'}
+Another 'c'. It's already in the set. Remove 'c'. Increase length by 2. Length: 4. Set: {'a', 'b'}
+'d' is not in the set. Add 'd'. Set: {'a', 'b', 'd'}
+Another 'd'. It's already in the set. Remove 'd'. Increase length by 2. Length: 6. Set: {'a', 'b'}
+Final Check:
+
+The set still has {'a', 'b'}, meaning we have characters that appeared an odd number of times.
+We can use one of these characters as the center of the palindrome. Add 1 to the length. Final Length: 7.
+So, the longest palindrome we can build with "abccccdd" has a length of 7.
+
+✅Approach:
+Initialize Variables:
+
+Create an empty set to keep track of characters that appear an odd number of times.
+Initialize a variable length to keep track of the length of the palindrome.
+Iterate Over the Characters of the String:
+
+For each character in the string, check if it is in the set.
+If it is in the set, remove it from the set and increase the length by 2.
+If it is not in the set, add it to the set.
+Check for Odd Characters:
+
+After processing all characters, check if there are any characters left in the set.
+If the set is not empty, it means there are characters that appear an odd number of times. Add 1 to the length for the center character of the palindrome.
+Return the Length:
+
+Return the calculated length of the longest palindrome.

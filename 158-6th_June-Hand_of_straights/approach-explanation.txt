@@ -1,0 +1,20 @@
+Intuition
+The problem is to determine if we can rearrange a given hand of cards into groups where each group contains exactly groupSize consecutive cards.
+
+Approach
+1. Initialize a Map:
+Create a map to count occurrences of each card in the hand.
+2. Iterate and Group:
+Iterate over the map in ascending order of keys.
+For each card, if it appears one or more times:
+Attempt to form a group starting from that card.
+Check if the subsequent groupSize - 1 cards exist and have sufficient counts.
+If any card in the group is missing, return false.
+If the group is formed, decrement the count of each card in the group by one.
+3. Return the Result:
+If all groups are formed successfully, return true.
+Complexity
+Time complexity:
+The time complexity of the solution is O(nlogn) where n is the size of the hand. This is because we sort the hand before iterating through it, which takes O(nlogn) time. The subsequent iterations take O(n) time as we iterate through each card once.
+Space complexity:
+The space complexity of the solution is O(n) as we use a map to store the frequency of each card in the hand. In the worst case, if all cards in the hand are unique, the map will have n entries.

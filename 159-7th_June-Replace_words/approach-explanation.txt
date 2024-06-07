@@ -1,0 +1,15 @@
+Intuition
+The goal is to replace words in the sentence with their shortest root from the dictionary.
+We use a set for fast lookups to determine if a prefix is a root.
+For each word in the sentence, we check its prefixes and replace it with the shortest matching root.
+Approach
+Create Set of Roots:
+Convert the dictionary into a set for quick lookups.
+Process Each Word:
+Split the sentence into words.
+For each word, iterate over its prefixes to find the shortest root in the set.
+Construct Result Sentence:
+Build the result sentence by appending each found prefix or the word itself if no prefix is found.
+Complexity
+Time complexity:O(n+m+k⋅l^2)
+Space complexity:O(n+m)

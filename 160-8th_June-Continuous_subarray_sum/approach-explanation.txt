@@ -1,0 +1,23 @@
+Intuition
+The key observation is that we only care about the remainder when the sum of subarray elements is divided by k. This is because if two subarrays have the same remainder when divided by k, the difference between their sums will also be a multiple of k.
+
+Approach
+Prefix Sum and Remainder Hash Table:
+Maintain a hash table remainder_map to store the last index encountered for each remainder (currentSum % k) encountered so far.
+Initialize remainder_map[0] to -1 (since an empty subarray has a sum of 0, which is a multiple of any k).
+Iterate Through the Array:
+For each element nums[i]:
+Update the current sum currentSum += nums[i].
+Calculate the current remainder remainder = currentSum % k (might be negative).
+If remainder is negative, add k to make it non-negative (equivalent to adding a multiple of k).
+Check if the current remainder remainder exists in the hash table remainder_map:
+If yes (remainder_map[remainder] >= 0), it means there exists a previous subarray ending at index remainder_map[remainder] whose sum also leaves the same remainder when divided by k. This indicates a subarray with a sum that's a multiple of k. Return true.
+If not (remainder_map[remainder] == -1), update the hash table entry for remainder with the current index i to track the first occurrence of this remainder.
+Return False
+If the entire loop completes without finding a good subarray, return false.
+Complexity
+Time complexity:
+O(n) due to the single pass through the array.
+
+Space complexity:
+O(k) in the worst case, where k distinct remainders are encountered.

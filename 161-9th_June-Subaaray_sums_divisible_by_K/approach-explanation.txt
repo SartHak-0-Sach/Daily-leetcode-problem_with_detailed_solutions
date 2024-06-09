@@ -1,0 +1,34 @@
+Topic : Prefix Sum, Number Theory, Hash Table
+
+Prefix Sum:
+Prefix sum, also known as cumulative sum, is a technique used in computer science and mathematics to efficiently calculate the sum of a sequence of numbers. The prefix sum of a sequence a[0], a[1] ... a[n - 1] is another sequence s[0], s[1] ... s[n - 1] where each element s[i] represent the sum of the first i elements of the original array. (ChatGPT)
+
+An example of prefix sum array:
+a = [1, 2, 3, 4, 5] =>
+s = [1, 3, 6, 10, 15]
+
+Hash Table:
+A Hash table is defined as a data structure used to insert, look up, and remove key-value pairs quickly. It operates on the hashing concept, where each key is translated by a hash function into a distinct index in an array. The index functions as a storage location for the matching value. In simple words, it maps the keys with the value. (GFG Reference)
+
+Number Thory:
+Basic modular math:
+
+1. (a % m + b % m) % m === (a + b) % m
+2. (a - b) % m === ((a % m - b % m) + m) % m assume a >= b
+3. If a < 0, its module value is equivalent to (a % k) + k
+Solution:
+To solve this problem, we may use the prefix sum skill and basic modular math above.
+
+We begin by computing the prefix sum for each index i of the provided array nums. It's important to note that the sum is computed and maintained positive with modulo by k.
+
+With the given example nums = [4, 5, 0, -2, -3, 1] and k = 5, here is the running prefix sum : p = [4, 4, 4, 2, 4, 0].
+
+Note that the sum of a subarray nums[i] + nums[i + 1] + ... nums[j] can be represented as p[j] - (i > 0 ? p[i - 1] : 0).
+
+If a subarray nums[i] + nums[i + 1] + ... nums[j] is divisible by k, it must satisfy:
+
+j - i > 0 and
+(((p[j] % k) - (i > 0 ? (p[i - 1] % k) : 0)) + k ) % k == 0 => In simplicity: p[j] % k == p[i] % k or p[j] % k == 0 if i == 0
+We can utilize a Hash Table to store our prefix sums, where each key represents a prefix sum value and its corresponding value is the number of occurrences of that particular value.
+
+For the current running j, if there exists an index i in our hash table such that j > i and it satisfies the above mentioned two conditions, we increase our result count with its correspoding (i > 0 ? p[i - 1] : 0) frequency.

@@ -1,0 +1,15 @@
+For the constraints, char (int8_t) is sufficient.
+Use std::sort
+Use Counting sort
+Python 1-liner
+A variant for Counting sort which uses counting sort & reuse the array heights to hold the difference of original & sorted ones; then use |heights|-count(heights, 0) to give the answer. Both C++ & python codes are made.
+Other counting sort's variant without using function count.
+The last one solution is intended to not use other containers( counting sort is of course impossible), just reuse the array heights. In short, use bitwise operations to pack heights[i] & i into int; then sort. Finally, the sorted data is decompressed to count the distinct values.
+
+Complexity
+Time complexity:
+sort:O(nlogn)
+counting sort: O(n+M)O(n+M)O(n+M) where M=max(heights)
+
+Space complexity:
+O(∣sort∣+n)→extra:O(1)

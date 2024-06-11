@@ -1,0 +1,23 @@
+Intuition
+1st approach uses sorting with a custom comparator which is concise
+
+Later try other approach. 2nd approach uses counting sot.
+
+Approach
+Use the array a2i to define the function x to its index in arr2; if x is not in arr2, set a2i[x]=n2.
+The comparator is given by a lambda function
+[&](int x, int y){
+    if (a2i[x]==a2i[y]) return x<y;
+    return a2i[x]<a2i[y];
+};
+Sort arr1 according to this comparator & return the answer
+The 2nd approach using counting sort is much more subtle which is presented in the 2nd part of this post.
+Complexity
+Time complexity:
+O(n1log⁡(n1)+n2+M)O(n1\log(n1)+n2+M)O(n1log(n1)+n2+M)
+counting sort: O(n1+n2+M)O(n1+n2+M)O(n1+n2+M) where M=max(arr1)M=max(arr1)M=max(arr1)
+
+Space complexity:
+O(n2)
+
+counting sort: O(n1+n2)

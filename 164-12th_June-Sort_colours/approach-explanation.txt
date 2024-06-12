@@ -1,0 +1,83 @@
+Intuition
+LC asks:
+
+Could you come up with a one-pass algorithm using only constant extra space?
+
+O(1) extra space can be done by using counting sort.
+But one-pass algorithm is applied the algorithm for Dutch national flag.
+
+Approach
+1st approach is using counting sort which is used for several daily questions.
+2nd approach is the algorithm for Dutch national flag
+Dutch national flag problem (red, white, blue)=(0, 1, 2)
+Set 3 pointers l<=m<=r to partition the array
+Use a conditional loop while m<=r check nums[m]:
+case red:
+    swap(nums[l], nums[m]);
+    l++, m++;
+    break;
+case white:
+    m++;
+    break;
+case blue:
+    swap(nums[m], nums[r]);
+    r--;
+Let's see how this algorithm works. The following output is modifying the submitted code by adding some outputs:
+
+[2,0,2,1,0,0,1,0,1,2]
+ 2 0 2 1 0 0 1 0 1 2
+ L
+ M
+                   R
+-------
+ 2 0 2 1 0 0 1 0 1 2
+ L
+ M
+                 R
+-------
+ 1 0 2 1 0 0 1 0 2 2
+ L
+ M
+               R
+-------
+ 1 0 2 1 0 0 1 0 2 2
+ L
+   M
+               R
+-------
+ 0 1 2 1 0 0 1 0 2 2
+   L
+     M
+               R
+-------
+ 0 1 0 1 0 0 1 2 2 2
+   L
+     M
+             R
+-------
+ 0 0 1 1 0 0 1 2 2 2
+     L
+       M
+             R
+-------
+ 0 0 1 1 0 0 1 2 2 2
+     L
+         M
+             R
+-------
+ 0 0 0 1 1 0 1 2 2 2
+       L
+           M
+             R
+-------
+ 0 0 0 0 1 1 1 2 2 2
+         L
+             M
+             R
+-------
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+Extra: O(1)

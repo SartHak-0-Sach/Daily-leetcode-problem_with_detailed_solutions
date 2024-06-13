@@ -1,0 +1,39 @@
+Intuition
+The problem requires us to find the minimum number of moves to position each student in a seat such that no two students occupy the same seat. Since the cost of moving a student is the absolute difference between their current position and the target seat position, the optimal way to achieve this is to pair the closest seats with the closest students.
+
+Approach
+Sorting:
+Sort both the seats and students arrays. By sorting, we ensure that the smallest available seat is paired with the smallest positioned student, the second smallest seat with the second smallest positioned student, and so on. This minimizes the overall distance each student has to move.
+Calculate Moves:
+Iterate through the sorted arrays and compute the sum of absolute differences between the corresponding elements in the seats and students arrays. This gives the total number of moves required to seat all students.
+Complexity
+Time Complexity: O(n log n)
+
+Sorting the seats and students arrays takes ( O(n \log n) ) time each.
+Calculating the total moves takes ( O(n) ) time.
+Hence, the overall time complexity is dominated by the sorting step, i.e., ( O(n \log n) ).
+Space Complexity: O(1)
+
+No extra space is used other than a few variables to store intermediate results.
+Step by Step Explanation
+Let's take the example from the problem statement:
+
+Example: seats = [3, 1, 5], students = [2, 7, 4]
+
+Initial State:
+Seats	Students
+3	2
+1	7
+5	4
+After Sorting:
+Seats	Students
+1	2
+3	4
+5	7
+Calculate Moves:
+Seat	Student	Moves
+1	2	1
+3	4	1
+5	7	2
+Total Moves		4
+The total number of moves required is 4.

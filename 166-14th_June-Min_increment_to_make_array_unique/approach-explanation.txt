@@ -1,0 +1,19 @@
+Intuition
+Sort to find the minimum increment needed to make it uniunique
+
+But why sorting ?
+When the array is sorted, any duplicate values will be adjacent. This allows us to easily identify and resolve conflicts by ensuring that each value is greater than the previous one.
+In a sorted array, if nums[i] is not greater than nums[i-1], we know exactly how much to increment nums[i] to make it unique with minimal effort.
+Approach
+Sort the array
+traverse from index 1 to the last
+for each iteration find
+if array[present_index] <= array[present_index - 1]
+- Increase count = count + array[present_index - 1] - array[present_index] + 1
+- make array[present_index] = array[present_index - 1] + 1
+else Do nothing and continue traversing
+Return count value
+Complexity
+Time complexity:O(nlog(n))
+
+Space complexity:O(log(n)) (for recursive calls)

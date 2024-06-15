@@ -1,0 +1,21 @@
+Intuition
+The intuition behind this code is to maximize the available capital after selecting up to k projects, by strategically choosing the projects with the highest profit that can be started within the current capital constraints. It does this by sorting projects by their capital requirements to quickly find the most affordable ones, then using a max-heap to efficiently select the highest-profit projects that are currently affordable, updating the available capital with each project's profit. This greedy approach ensures that at each step, the most beneficial project within financial reach is selected to optimize the total capital.
+Approach
+Sort Projects by Capital: Begin by sorting the projects based on the capital required to ensure you look at the cheapest projects first.
+
+Use Max-Heap for Profits: Employ a max-heap (inverted to a min-heap using negative values) to always have quick access to the project with the highest available profit.
+
+Process Projects Within Capital: As long as there are projects you can afford, add their profits (negatively) to the heap.
+
+Select Top Profit Projects: For up to k iterations, choose the most profitable project you can afford by popping from the heap, increasing your capital.
+
+Resulting Capital: After potentially choosing k projects, the resulting capital is the maximum capital achieved.
+
+If you are confused clear explanation of approach is here.
+
+Complexity
+Time complexity:
+O(NLogN+KLogN)
+
+Space complexity:
+O(N)

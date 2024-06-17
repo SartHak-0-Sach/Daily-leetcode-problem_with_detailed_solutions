@@ -1,0 +1,33 @@
+Intuition
+The code works like providing change with limited coin denominations. Suppose you need to cover every amount up to 𝑛 cents. If you can't make exact change for a particular amount miss, it indicates you lack a coin of value less than or equal to miss. To fill this gap, you add a coin of that exact missing amount. This addition allows you to now cover new amounts up to 2 * miss. Repeat this process until you can provide change for every amount up to 𝑛. This method ensures you add the minimum number of new coins needed to cover any shortages.
+Approach
+If its hard to understand the approach, I have clear explanation here.
+
+Initialize Variables: Start with miss set to 1, added to 0, and index i at 0 to track the smallest sum that cannot be formed and the number of patches added.
+
+Iterate with Condition: Continue the loop as long as miss (the target sum we need to achieve) is less than or equal to n.
+
+Use Existing Numbers: Check if the current number in the list (nums[i]) can be used to form miss. If yes, add it to miss to extend the range of formable sums and increment the index i.
+
+Add Necessary Numbers: If nums[i] is greater than miss or all numbers are already used, add miss itself to cover the smallest unformable sum, and double the value of miss.
+
+Increment Added Count: Whenever a number is added to cover a gap, increase the added counter.
+
+Return Total Patches: Once miss exceeds n, return the total count of added numbers as the result, representing the minimum patches needed to form every number up to n.
+
+Example:
+
+Input: [1, 5, 10]
+
+Step	Current nums	Miss	Action	Reason	New Coverage
+1	[1, 5, 10]	1	Use 1	1 is available and matches miss	Sums up to 1
+2	[1, 5, 10]	2	Add 2	5 is too large to form sum 2	Sums up to 3
+3	[1, 5, 10]	4	Add 4	5 is too large to form sum 4	Sums up to 7
+4	[1, 5, 10]	8	Use 5	Can use 5 with existing numbers to form 8	Sums up to 12
+5	[1, 5, 10]	13	Use 10	Can use 10 with existing numbers to form 13	Sums up to 22
+Complexity
+Time complexity:
+O(N)
+
+Space complexity:
+O(1)

@@ -1,0 +1,39 @@
+Intuition
+The problem requires determining whether a given non-negative integer ( c ) can be expressed as the sum of two squares. A mathematical theorem by Fermat states that a number can be represented as the sum of two squares if and only if all prime factors of the form ( 4k + 3 ) have even powers in its prime factorization. Leveraging this theorem, we can design an efficient algorithm to solve the problem.
+
+Approach
+Prime Factorization:
+
+We start by iterating over possible divisors ( i ) from 2 to ( \sqrt{c} ).
+For each ( i ), if ( i ) is a divisor of ( c ), we count how many times ( i ) divides ( c ) (i.e., the power of ( i ) in the prime factorization of ( c )).
+If ( i \mod 4 = 3 ) and the power of ( i ) is odd, then ( c ) cannot be expressed as the sum of two squares, and we return false.
+Remaining Prime Factor:
+
+After checking all divisors up to ( \sqrt{c} ), if the remaining value of ( c ) is of the form ( 4k + 3 ), it must be raised to an even power. If it's not, we return false.
+Final Check:
+
+If none of the above conditions for returning false are met, we return true.
+Complexity
+Time Complexity: ( O(\sqrt{c}) ) because we iterate from 2 to ( \sqrt{c} ).
+Space Complexity: ( O(1) ) as we use only a constant amount of extra space.
+Step By Step Explanation
+Let's use an example ( c = 45 ) to demonstrate the approach.
+
+Initialization:
+
+Start with ( c = 45 ).
+Prime Factorization:
+
+Iteration	Divisor ( i )	( c % i )	( c / i )	Exponent Count	Comment
+1	2	45 % 2 != 0	-	0	2 is not a factor of 45
+2	3	45 % 3 == 0	45 / 3 = 15	1	3 is a factor, count exponent
+3	3	15 % 3 == 0	15 / 3 = 5	2	3 is a factor, count exponent
+4	3	5 % 3 != 0	-	-	3 is no longer a factor
+5	5	5 % 5 == 0	-	-	5 is a factor but does not affect logic
+Final Prime Factorization Check:
+
+Remaining ( c = 5 ).
+( 5 % 4 \neq 3 ) so final check passes.
+Conclusion:
+
+Since all conditions are satisfied, ( c = 45 ) can be expressed as a sum of two squares.

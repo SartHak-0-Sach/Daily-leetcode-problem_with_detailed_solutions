@@ -1,0 +1,81 @@
+Intuition
+The problem requires assigning the most profitable jobs to workers based on their ability to handle the job difficulty. Each worker can complete only one job, and each job can be completed multiple times by different workers. To maximize the total profit, we need to ensure that each worker is assigned the most profitable job they can complete given their skill level.
+
+Approach
+Initialization:
+
+Determine the maximum job difficulty.
+Initialize a maxProfitUpToDifficulty array to store the maximum profit for each difficulty level up to the maximum difficulty.
+Fill the Profit Lookup Table:
+
+For each job, update the maxProfitUpToDifficulty array to ensure it holds the maximum profit for the given difficulty.
+Convert the maxProfitUpToDifficulty array to a cumulative maximum profit array, where each index i will have the maximum profit possible for difficulties from 0 to i.
+Calculate Total Profit:
+
+For each worker, use their ability to look up the corresponding maximum profit from the maxProfitUpToDifficulty array and sum up the total profit.
+Complexity
+Time Complexity: ( O(n + m + d) ), where ( n ) is the number of jobs, ( m ) is the number of workers, and ( d ) is the maximum difficulty.
+Space Complexity: ( O(d) ) for the maxProfitUpToDifficulty array.
+Step by Step Explanation
+Step 1: Identify Maximum Difficulty
+First, we find the maximum difficulty among all jobs to determine the size of our dynamic programming (DP) array.
+
+int maxDifficulty = 0;
+for (int d : difficulty) {
+    maxDifficulty = Math.max(maxDifficulty, d);
+}
+Job	Difficulty
+1	2
+2	4
+3	6
+4	8
+5	10
+maxDifficulty = 10
+Step 2: Create Profit Lookup Table
+Create an array maxProfitUpToDifficulty where each index represents the maximum profit obtainable for that difficulty.
+
+int[] maxProfitUpToDifficulty = new int[maxDifficulty + 1];
+for (int i = 0; i < difficulty.length; i++) {
+    maxProfitUpToDifficulty[difficulty[i]] = Math.max(maxProfitUpToDifficulty[difficulty[i]], profit[i]);
+}
+Difficulty	Profit	maxProfitUpToDifficulty
+2	10	10
+4	20	20
+6	30	30
+8	40	40
+10	50	50
+Step 3: Convert to Cumulative Maximum Profit
+Update the maxProfitUpToDifficulty array to ensure each index i contains the maximum profit possible for difficulties from 0 to i.
+
+for (int i = 1; i <= maxDifficulty; i++) {
+    maxProfitUpToDifficulty[i] = Math.max(maxProfitUpToDifficulty[i], maxProfitUpToDifficulty[i - 1]);
+}
+Difficulty	maxProfitUpToDifficulty (Cumulative)
+0	0
+1	0
+2	10
+3	10
+4	20
+5	20
+6	30
+7	30
+8	40
+9	40
+10	50
+Step 4: Calculate Total Profit
+For each worker, determine the maximum profit they can earn using the maxProfitUpToDifficulty array.
+
+int totalProfit = 0;
+for (int ability : worker) {
+    if (ability > maxDifficulty) {
+        totalProfit += maxProfitUpToDifficulty[maxDifficulty];
+    } else {
+        totalProfit += maxProfitUpToDifficulty[ability];
+    }
+}
+Worker Ability	Max Profit
+4	20
+5	20
+6	30
+7	30
+Total Profit: 20 + 20 + 30 + 30 = 100

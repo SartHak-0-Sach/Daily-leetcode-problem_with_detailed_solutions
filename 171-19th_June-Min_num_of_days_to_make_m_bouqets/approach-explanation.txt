@@ -1,0 +1,65 @@
+Intuition
+The problem revolves around finding the minimum number of days required to make m bouquets, where each bouquet requires k adjacent flowers that have bloomed. Given the constraints, a direct approach might not be feasible due to the potential size of the input. Instead, a binary search approach combined with a helper function to validate bouquet formation within a given number of days can be efficient.
+
+Approach
+Initial Check:
+
+If m * k exceeds the length of the bloomDay array, it's impossible to make m bouquets, so return -1.
+Binary Search Setup:
+
+Use binary search to determine the minimum number of days required.
+Initialize low to 1 (the minimum possible day) and high to (10^9) (the maximum possible day given the constraints).
+Binary Search Execution:
+
+While low is less than high, calculate the middle value (mid).
+Use the helper function isPossibleBouquets to check if it's possible to make m bouquets within mid days.
+If possible, adjust high to mid.
+Otherwise, adjust low to mid + 1.
+Helper Function (isPossibleBouquets):
+
+Iterate through the bloomDay array, counting consecutive flowers that have bloomed on or before the given day.
+Track the number of valid bouquets formed.
+Return true if the required number of bouquets (m) can be formed, otherwise false.
+Step by Step Explanation
+Example:
+
+Input: bloomDay = [1, 10, 3, 10, 2], m = 3, k = 1
+Output: 3
+We need to make 3 bouquets, each containing 1 adjacent flower. Here’s how we can approach the problem:
+
+Steps
+Binary Search Setup:
+
+We use binary search to find the minimum number of days. We initialize low to 1 (minimum possible day) and high to the maximum value in bloomDay.
+Helper Function - canMakeBouquets:
+
+This function checks if we can make m bouquets in a given number of days (day). It iterates through bloomDay and counts the number of flowers that can be used to make bouquets.
+Binary Search Process:
+
+We perform binary search by calculating the middle day (mid). We then use canMakeBouquets to check if we can make the required bouquets in mid days.
+If we can make the bouquets, we search in the left half (days fewer than mid).
+If we cannot make the bouquets, we search in the right half (days more than mid).
+Tables for Better Understanding
+Binary Search Table:
+
+Iteration	low	high	mid	Can Make Bouquets in mid days?	Update low or high
+1	1	10	5	Yes	high = mid (5)
+2	1	5	3	Yes	high = mid (3)
+3	1	3	2	No	low = mid + 1 (3)
+Helper Function Table (canMakeBouquets):
+
+Day (mid)	Flower	Can Use Flower?	Bouquets Formed	Total Bouquets
+3	1	Yes	1	1
+3	10	No	0	1
+3	3	Yes	1	2
+3	10	No	0	2
+3	2	Yes	1	3
+Complexity
+Time Complexity:
+
+The binary search runs in O(log(max_day)), where max_day is (10^9).
+The isPossibleBouquets function runs in (O(n), where n is the length of the bloomDay array.
+Overall time complexity is (O(n log(max_day))).
+Space Complexity:
+
+The space complexity is O(1) as we are not using any additional data structures that scale with input size.

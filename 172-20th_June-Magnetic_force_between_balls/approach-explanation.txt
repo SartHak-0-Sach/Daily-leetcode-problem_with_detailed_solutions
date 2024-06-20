@@ -1,0 +1,11 @@
+Intuition
+The problem is to find the maximum distance between two points in a list of points such that there are at least m points between them. This problem can be solved by using binary search to find the maximum distance.
+
+Approach
+Binary Search: The idea is to use binary search to find the maximum distance. The binary search is performed on the range from 1 to the maximum distance between any two points in the list. For each mid value, check if there are at least m points between two points with a distance of mid. If there are, then update the lower bound of the search range. If not, then update the upper bound of the search range.
+
+Function fn: The function fn checks if there are at least m points between two points with a distance of mid. It iterates over the list of points, counting the number of points that are at least mid apart from the previous point. If this count is at least m, it returns True; otherwise, it returns False.
+
+Complexity
+Time complexity: O(n log n)
+Space complexity: O(1)

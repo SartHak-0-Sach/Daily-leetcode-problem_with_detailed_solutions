@@ -1,0 +1,14 @@
+Intuition
+Based off the quesiton, we know that the minimum number for the answer would just be the original sum of customers when grumpy[i] == 0
+Since the question mentions that the show owner can be not grumpy for some consecutive minutes, this should be an indicator to use a sliding window
+the sliding window can keep track of the actual sum of the customers within this time frame as well as the total if the owner were to not be grumpy for this time
+finding the difference between the max amount of customers and original amount will show us how beneicial not be grumpy for this time period is - a higher number is better
+Approach
+Get an original total cusomters, only counting the indices where the owner is not grumpy (grumpy[i] == 0)
+initialize left and right pointers for the sliding window, as well as the actual sum and max possible sum for the sliding window
+move through using the sliding window, adding any new numbers to the max sum and to the actual sum if they are not grumpy and removing them according to this to
+get the maximum difference of any sliding window
+return the original sum plus the max diff from sliding window
+Complexity
+Time complexity: O(n)
+Space complexity: O(1)

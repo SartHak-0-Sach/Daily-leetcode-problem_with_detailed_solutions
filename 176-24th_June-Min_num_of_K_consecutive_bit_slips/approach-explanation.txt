@@ -1,0 +1,13 @@
+Intuition
+There is only one way to filp A[0],
+and A[0] will tell us if we need to filp the range A[0] ~ A[K -1].
+So we start from the leftmost one by one using a greedy idea to solve this problem.
+
+Approach
+Create a new array isFlipped[n].
+isFlipped[i] = 1 iff we flip K consecutive bits starting at A[i].
+
+We maintain a variable flipped and flipped = 1 iff the current bit is flipped.
+
+If flipped = 0 and A[i] = 0, we need to flip at A[i].
+If flipped = 1 and A[i] = 1, we need to flip at A[i].

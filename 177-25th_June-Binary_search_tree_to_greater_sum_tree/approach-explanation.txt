@@ -1,0 +1,57 @@
+Intuition
+To convert a Binary Search Tree (BST) to a Greater Tree, we need to ensure that every node's value is updated to the sum of all values greater than or equal to the node's value. In a BST, an in-order traversal gives us the nodes in increasing order. To achieve the desired transformation, we need to traverse the tree in reverse in-order (right-root-left), accumulating the sum of the node values as we go.
+
+Approach
+Reverse In-Order Traversal:
+
+We traverse the BST starting from the rightmost node (which has the largest value) to the leftmost node (which has the smallest value).
+While traversing, we keep a running total (sum) of all the node values we have seen so far.
+As we visit each node, we update its value by adding the current sum to the node's value and then update sum to this new value.
+Recursive Function:
+
+We use a helper function to perform the reverse in-order traversal.
+This function will be called recursively first on the right subtree, then the current node, and finally on the left subtree.
+Step by Step Explanation
+Example:
+
+Input BST:
+
+        4
+       / \
+      1   6
+     / \ / \
+    0  2 5  7
+         \   \
+          3   8
+Steps:
+
+Traverse to the rightmost node:
+Current Node: 8, Sum: 0, New Node Value: 8, Updated Sum: 8
+Move to 7:
+Current Node: 7, Sum: 8, New Node Value: 15, Updated Sum: 15
+Continue to 6:
+Current Node: 6, Sum: 15, New Node Value: 21, Updated Sum: 21
+Continue to 5:
+Current Node: 5, Sum: 21, New Node Value: 26, Updated Sum: 26
+Move to 4:
+Current Node: 4, Sum: 26, New Node Value: 30, Updated Sum: 30
+Continue to 3:
+Current Node: 3, Sum: 30, New Node Value: 33, Updated Sum: 33
+Move to 2:
+Current Node: 2, Sum: 33, New Node Value: 35, Updated Sum: 35
+Continue to 1:
+Current Node: 1, Sum: 35, New Node Value: 36, Updated Sum: 36
+Finally, move to 0:
+Current Node: 0, Sum: 36, New Node Value: 36, Updated Sum: 36
+Output BST:
+
+        30
+       / \
+      36   21
+     / \ / \
+    36 35 26  15
+         \   \
+          33  8
+Complexity
+Time Complexity: O(n), where n is the number of nodes in the BST. This is because we visit each node exactly once during the traversal.
+Space Complexity: O(n) in the worst case due to the recursion stack. However, this can be reduced to O(h) where h is the height of the tree, if the tree is balanced.

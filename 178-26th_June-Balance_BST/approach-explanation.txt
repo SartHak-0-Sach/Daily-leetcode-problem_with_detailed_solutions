@@ -1,0 +1,6 @@
+Approach
+Travel the original BST in the inorder to get the nodes in the sorted order
+Use Divide and Conquer to build the balanced BST
+Complexity
+Time complexity: O(n)
+Space complexity: O(n)

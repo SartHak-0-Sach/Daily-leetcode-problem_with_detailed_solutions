@@ -1,0 +1,15 @@
+Intuition
+The intuition behind the approach is to use a DFS to traverse the graph and find the ancestors of each node. By starting the DFS from each node and adding the current node to the ans list of its children, we ensure that all the ancestors of a node are recorded in the ans list of that node.
+The directChild list is used to keep track of the direct children of each node, which helps in efficiently traversing the graph during the DFS.
+
+Approach
+The approach used in the code is a depth-first search (DFS) to find the ancestors of each node in the graph represented by the given edges.
+
+Initialize two lists: ans to store the ancestors of each node, and directChild(dc) to store the direct children of each node.
+Iterate through the edges list and add each child node to the directChild(dc) list of its parent node.
+Iterate through the nodes from 0 to n-1 and perform a DFS starting from each node.
+In the DFS function, for each child node of the current node, check if the current node is not already present in the ans list of the child node. If not, add the current node to the ans list of the child node and recursively call the DFS function with the child node as the new current node.
+Return the ans list as the final result.
+Complexity
+Time complexity:O(n + m)
+Space complexity:O(n + m)

@@ -1,0 +1,9 @@
+Intuition
+The intuition behind this solution is that in a star graph, all the edges are connected to a single central node. Therefore, if we look at the first two edges, the central node will be present in both of them. We can use this property to find the center of the star graph.
+
+Approach
+The approach used in the given code is to check if the first element of the first edge is present in the second edge. If it is, then the first element of the first edge is the center of the star graph. If not, then the second element of the first edge is the center of the star graph.
+
+Complexity
+Time complexity:O(1)
+Space complexity:O(1)

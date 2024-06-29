@@ -1,0 +1,15 @@
+Intuition
+sort vector<pair<size of hashtable of node, node>> and assign values
+
+Approach
+Create graph i.e. vector<unordered_set> which has an hash table for each node to keep its children
+make a vector<pair<size of hashtable of node, node>>
+fill up and sort this vector
+Now value of each node is = i+1 of its position in this sorted vector
+Create a Hashmap for quick value finding of each node
+Traverse given roads vector and add up values of each road given
+Complexity
+Time complexity:
+let road.size()=m
+TC : O(2m+2n+nlogn)
+Space complexity: O(n^2+n+n)

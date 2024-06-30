@@ -1,0 +1,83 @@
+Intuition
+To solve this problem, we need to ensure that both Alice and Bob can traverse the entire graph independently. This can be achieved by ensuring each has a connected graph (spanning tree). Using the Union-Find data structure, we can efficiently manage the connectivity of the graph. The goal is to maximize the number of edges removed while ensuring both Alice and Bob can still traverse all nodes.
+
+Approach
+Initialize Union-Find Structures: Create two separate Union-Find structures, one for Alice and one for Bob, to manage their connectivity.
+Process Type 3 Edges First: Type 3 edges are the most valuable because they can be used by both Alice and Bob. We iterate through these edges first and attempt to add them to both Alice's and Bob's graphs. If the edge successfully connects two previously unconnected components for either Alice or Bob, it is necessary.
+Process Type 1 and Type 2 Edges: After handling type 3 edges, we separately process type 1 edges for Alice and type 2 edges for Bob. These edges are only useful if they connect new components for Alice or Bob, respectively.
+Check Full Connectivity: After processing all edges, we check if both Alice's and Bob's graphs are fully connected.
+Calculate Removable Edges: The number of removable edges is the total number of edges minus the number of edges required to ensure full connectivity for both Alice and Bob.
+Complexity
+Time Complexity:
+The Union-Find operations (find and union) are nearly constant time due to path compression and union by rank.
+Processing all edges involves iterating through them twice, giving a complexity of (O(E)), where (E) is the number of edges.
+Space Complexity:
+We use extra space for the Union-Find data structures, each requiring (O(N)) space for representative and component size arrays, where (N) is the number of nodes.
+Explanation
+Initialization:
+
+Create two Union-Find instances: one for Alice and one for Bob.
+Initialize the number of edges required to be included in the graph (edgesRequired).
+Variable	Description
+alice	Union-Find instance for Alice
+bob	Union-Find instance for Bob
+edgesRequired	Counter for edges that are required in the graph
+Processing Type 3 Edges:
+
+First, include all type 3 edges, which can be used by both Alice and Bob.
+Edge Type	Operation
+Type 3	Try to union nodes in both alice and bob Union-Find
+If successful in either, increment edgesRequired
+Processing Type 1 and Type 2 Edges:
+
+Process remaining edges: type 1 (Alice) and type 2 (Bob).
+Edge Type	Operation
+Type 1	Try to union nodes in alice Union-Find
+If successful, increment edgesRequired
+Type 2	Try to union nodes in bob Union-Find
+If successful, increment edgesRequired
+Final Check:
+
+Ensure both Alice and Bob can fully traverse the graph by checking if their respective Union-Find structures are fully connected.
+Condition	Action
+Both alice and bob are connected	Return len(edges) - edgesRequired
+Either alice or bob is not connected	Return -1
+Example Walkthrough
+Example Input:
+
+n = 4
+edges = [[3,1,2],[3,2,3],[1,1,3],[1,2,4],[1,1,2],[2,3,4]]
+Processing Steps:
+
+Initialize:
+
+alice and bob Union-Find instances.
+edgesRequired = 0.
+Type 3 Edges:
+
+Process [3,1,2]:
+Union nodes 1 and 2 in both alice and bob.
+Increment edgesRequired to 1.
+Process [3,2,3]:
+Union nodes 2 and 3 in both alice and bob.
+Increment edgesRequired to 2.
+Type 1 and Type 2 Edges:
+
+Process [1,1,3] for alice:
+Union nodes 1 and 3.
+Increment edgesRequired to 3.
+Process [1,2,4] for alice:
+Union nodes 2 and 4.
+Increment edgesRequired to 4.
+Process [1,1,2] for alice:
+Union not needed (already connected), no increment.
+Process [2,3,4] for bob:
+Union nodes 3 and 4.
+Increment edgesRequired to 5.
+Final Check:
+
+Both alice and bob Union-Find structures are fully connected.
+Total edges: 6, edges required: 5.
+Edges removed: 6 - 5 = 1.
+Output:
+1

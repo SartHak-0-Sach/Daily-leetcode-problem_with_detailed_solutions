@@ -1,0 +1,2 @@
+Intuition
+The intuition for the threeConsecutiveOdds function involves iterating through the array and checking groups of three consecutive elements at each step. The function uses a for loop to traverse the array, and at each iteration, it applies a bitwise AND operation (& 1) to determine if the current element and the next two elements are all odd. If a triplet of consecutive odd numbers is found, it returns true; otherwise, it continues the search until the end of the array and returns false if no such triplet is found.

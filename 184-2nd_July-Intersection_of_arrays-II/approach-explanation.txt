@@ -1,0 +1,9 @@
+Intuition
+Using hash map to opimize the algorithm o(N). Instead of using sorting. It takes O(NlogN). But my solution takes require more space then sorting approach.
+Approach
+My first thought is using a "Hash_map" to store the elements of 1 array and corresponding frequency into hash map.
+Add the elements of "nums1" into map with corresponding frequency.
+Iterate throught each element of "nums2". If frequency of the element stored in hash map greater than 0. We add this element into "res" and decrease the frequency of this element.
+Complexity
+Time complexity: O(N).
+Space complexity: O(N).

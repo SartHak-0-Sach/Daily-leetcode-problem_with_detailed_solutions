@@ -1,0 +1,28 @@
+Intuition
+1st try is just to obtain an acceptible code by simulation.
+
+Use std::string stack as a stack; the behavior of pop_back for chars is just reversing the chars.
+
+This solution is in no way optimal; later try other approach.
+
+LC has shown the so-called Wormhole solution which is in fact by @lee several years ago; a different version with the idea Wormholes is also done.
+
+Approach
+Need 2 strings, stack as a stack for chars & rev which reverses the desired substring
+Transverse the whole string s
+When c is not ')' add it to stack
+Otherwise proceed the following process
+rev="";
+char r=stack.back();
+for(; r!='('; r=stack.back()){//reversing substring
+   rev+=r;
+   stack.pop_back();
+}
+stack.pop_back();// removing '('
+stack+=rev;
+stack is the answer
+
+Complexity
+Time complexity: O(n^2)
+Wormholes: O(n)
+Space complexity: O(n)

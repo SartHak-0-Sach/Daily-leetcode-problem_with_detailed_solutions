@@ -1,0 +1,17 @@
+Intuition
+When given a graph with cities and distances between them, we want to find the city that has the fewest number of reachable cities within a given distance threshold. This requires understanding the shortest paths between cities and then evaluating each city's reachability within the threshold.
+
+Approach
+Initialization:
+Use a 2D matrix dist to represent the shortest distances between every pair of cities. Initialize the distances with INT_MAX (infinity), except the diagonal (self-distances) which are set to 0.
+Set Initial Distances:
+Populate the dist matrix with the given edge weights. For each edge [u, v, w], set dist[u][v] and dist[v][u] to w.
+Compute Shortest Paths:
+Use the Floyd-Warshall algorithm to compute the shortest paths between all pairs of cities. This algorithm iteratively updates the dist matrix to ensure that each entry dist[i][j] holds the shortest distance from city i (source) to city j (Destination).
+Count Reachable Cities:
+For each city, count how many other cities are reachable within the specified distance threshold.
+Determine the Result:
+Find the city with the smallest count of reachable cities. If there are multiple cities with the same count, choose the city with the highest index.
+Complexity
+Time complexity: O(n^3), since we use Floyd-Washall algorithm O(n^3) and also then iterate through whole matrix O(n^2) -> O(n^3)
+Space complexity: The primary space usage comes from the 'dist' matrix, which requires O(n^2) space to store distances between all pairs of cities. Thus, the space complexity is O(n^3).

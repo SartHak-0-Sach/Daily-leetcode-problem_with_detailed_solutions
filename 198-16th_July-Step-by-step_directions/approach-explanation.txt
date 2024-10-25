@@ -1,0 +1,18 @@
+Intuition
+We are given the task to find the path from a start node to a destination node. We can confidently say that the highest point of the path from the start node to the destination node is the Lowest Common Ancestor (LCA) of both the start and destination nodes. So, first, we will find the LCA node. Then, we will find the path from the LCA to the start node and from the LCA to the destination node. For the start node, we will count only the direction as 'U'because, in reality, we are coming from the start node to the LCA and then from the LCA to the destination node. Therefore, every step from the startValue node to the LCA node contributes only 'U', and the remaining path from the LCA to the destValue node contributes 'L' and 'R'.
+
+Approach
+Find the Lowest Common Ancestor (LCA):
+
+The LCA of two nodes in a binary tree is the deepest node that is an ancestor of both nodes.
+The intuition here is that the path from the startValue node to the destValue node can be broken down into two segments:
+From the startValue node to the LCA.
+From the LCA to the destValue node.
+
+Construct Paths:
+Once the LCA is identified, the next step is to find the path from the LCA to the startValue node, and the path from the LCA to the destValue node.
+For the path to the startValue node, since we need to move upwards (denoted by 'U'), we traverse the tree from the LCA to the startValue and note the path.
+For the path to the destValue node, we traverse the tree from the LCA to the destValue and note the path using 'L' for left and 'R' for right.
+
+Concatenate Paths:
+The final path from startValue to destValue is constructed by concatenating the upward path from startValue to the LCA and the downward path from the LCA to destValue.

@@ -1,0 +1,11 @@
+Intuition
+The task is to find critical points in a linked list and calculate the minimum and maximum distances between these points. Critical points are nodes that are either local maxima or local minima. A node is a local maxima if its value is greater than both its previous and next nodes. Similarly, a node is a local minima if its value is less than both its previous and next nodes.
+
+Approach
+Identify Critical Points: Traverse the linked list and identify nodes that are either local maxima or local minima by comparing each node's value with its previous and next nodes. Store the indices of these critical points.
+Calculate Distances:
+If there are fewer than two critical points, return [-1, -1].
+Otherwise, calculate the minimum distance between any two consecutive critical points and the maximum distance between the first and last critical points in the list.
+Complexity
+Time complexity:O(n)
+Space complexity:O(1)

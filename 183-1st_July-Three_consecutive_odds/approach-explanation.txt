@@ -1,2 +1,16 @@
-Intuition
-The intuition for the threeConsecutiveOdds function involves iterating through the array and checking groups of three consecutive elements at each step. The function uses a for loop to traverse the array, and at each iteration, it applies a bitwise AND operation (& 1) to determine if the current element and the next two elements are all odd. If a triplet of consecutive odd numbers is found, it returns true; otherwise, it continues the search until the end of the array and returns false if no such triplet is found.
+Approach
+Given an integer array arr, return true if there are three consecutive odd numbers in the array. Otherwise, return false.
+
+Use len to count the the length for consecutive odd numbers
+If x in nums is even reset len=0, otherwise len++
+if len==3 return true
+When the loop is through, there are no three consecutive odds, return false
+2nd C++ uses std::find_if with lambda which return the index if the first odd from index=i on is found in arr
+i=find_if(arr.begin()+i, arr.end(), 
+[](int x){return (x&1);})-arr.begin();
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(1)

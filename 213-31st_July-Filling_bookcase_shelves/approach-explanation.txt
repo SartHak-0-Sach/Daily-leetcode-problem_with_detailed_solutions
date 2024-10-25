@@ -1,0 +1,17 @@
+Explanation:
+The variable f[i] denotes the least height necessary to accommodate the first i books on the shelves.
+
+We begin with a vacant shelf, where the height f[0] is set to 0, as having no books results in no height requirement.
+
+For each book i, the approach evaluates whether to place it on the same shelf as the preceding books or to initiate a new shelf. It systematically assesses if the addition of the current book to the existing shelf would surpass the shelf's width. If it does not, the height of the shelf is determined by the tallest book already present on that shelf. The value of f[i] is then updated to reflect the lesser of its current value and the height achieved by including the book on the current shelf.
+
+Should the inclusion of a book cause the current shelf to exceed its maximum width, the process halts, prompting the start of a new shelf.
+
+This methodology guarantees that the overall height of the bookshelves is minimized while adhering to the width limitations of each shelf.
+
+Complexity
+Time complexity:
+O(n**2)
+
+Space complexity:
+O(n)

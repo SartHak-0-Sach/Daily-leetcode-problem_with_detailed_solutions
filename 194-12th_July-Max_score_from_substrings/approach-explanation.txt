@@ -1,0 +1,25 @@
+Intuition
+The provided solution efficiently maximizes points by iterating through the string s twice, using a greedy approach to prioritize and remove pairs ("ab" or "ba") based on their respective point values (x or y). It employs a stack to track characters, ensuring that pairs are identified and removed correctly. By iterating through s in linear time per pass and using straightforward string operations, the solution optimally accumulates points and returns the maximum possible score after processing all valid pairs. This approach balances simplicity with effectiveness, leveraging intuitive greedy selection to solve the problem within practical runtime constraints.
+
+Approach
+Problem Understanding: Recognize that the goal is to maximize points by repeatedly removing specific pairs ("ab" or "ba") from the given string s, where each removal yields a certain number of points (x for "ab" and y for "ba").
+
+Greedy Strategy: Prioritize the removal of pairs based on their respective point values (x and y). This involves iterating through s twice:
+
+First, remove "ab" pairs to maximize points using a stack to keep track of characters.
+Second, remove "ba" pairs similarly.
+This ensures that the maximum points are gained in each pass.
+Implementation Steps:
+
+Define a helper function (removePairs) using a stack to manage characters while iterating through s.
+Accumulate points (tempPoints) for each pair removal within removePairs.
+Update the main function (maximumGain) to call removePairs twice: once for "ab" pairs and once for "ba" pairs.
+Accumulate and return the total points (points) gained from both passes to achieve the maximum possible score.
+Efficiency Considerations: Ensure the solution operates in linear time complexity relative to the length of s per pass, leveraging efficient stack operations and string manipulations to optimize performance. This approach balances simplicity with effectiveness, providing a clear path to solving the problem within practical runtime constraints.
+
+Complexity
+Time complexity:
+TC : O(N)
+
+Space complexity:
+SC : O(N)

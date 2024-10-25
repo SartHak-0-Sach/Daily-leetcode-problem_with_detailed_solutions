@@ -1,0 +1,25 @@
+Intuition
+It would have been a way easier problem if () thing wasn't there
+Just because of those () we need to figure out a way to find the actual count of a element
+
+Approach
+Assume you would not given H2(MgH2)2 instead
+x1 x2 x2
+H2 Mg1 H2
+where xd factor at the top signifies how much its count will be multiplied due to ()xd
+then it can be implemented easily with map["Mg"] += 1 * 2
+So that's exactly what our mult vector stores
+What could be the multFactor for a particular element cannot be known in linear time if we iterate from start, that's why we will start from end
+We will get the digit just after the ) and this will have impact until its matching ( is found
+Now why do we need a stack for this can't it be done with just a variable
+Assume this case (A(BC)2)3 here first our factor will be x3 but after we encounter x2 factor so ultimately BC has a factor x6
+then as soon as we pass BC impact of x2 needs to be undone which we can do by x6/x2
+Similarly there can be a lot of nested brackets and for them we need a stack to get the correct multFactor for each element
+Now once we have assigned appropriate multFactors for each of the element(I have only mapped them with their first char i.e uppercase)
+we are almost done
+Now we can simply iterate from left to right and just get the string, its digit and we already have the multFactor so just add them up in a map
+Now just return the answer in the appropriate format
+Complexity
+Time complexity: O(n) (if we don't consider the TC of additional requirement of returning in the sorted order)
+
+Space complexity: O(n)

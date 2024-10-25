@@ -1,0 +1,23 @@
+Intuition
+Find position for min in row, then test it if max in column.
+
+2nd approach is a greedy method based on the fact there is at most 1 lucky number. (LC editorial has proved this fact by using contradiction)
+
+Python code is 1-liner based on the uniqueness of luck number.
+
+Approach
+The container minPos holds the position of the min for every row( All elements in the matrix are distinct). Proceed the loop; it takes O(mn) time.
+For ith row, set p=minPos[i], x=matrix[i][p]; transverse the pth column, if x is the max, add x to the list of lucky numbers ans.
+ans is the answer.
+2nd approach is a Greedy algorithm based on the fact there is at most 1 lucky number.
+The only candidate for the unique lucky number must be the max_rmin=max(min(row[i] for i) & let posj denote its position in column.
+A loop suffies to check whether max_rmin is a lucky number or not.
+Python 1-liner uses the trick max_rmin==min(max(col) for col in zip(*matrix))
+Complexity
+Time complexity:
+O(mn+m 
+2
+ )
+
+Space complexity:
+O(m)

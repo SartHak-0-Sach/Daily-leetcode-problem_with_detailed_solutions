@@ -1,0 +1,17 @@
+Intuition
+change folder problem, go deeper or go backward in a tree structure.
+
+2nd approach uses the recursion, C & C++ codes are implemented in different ways.
+
+3rd approach is to try a branchless loop suggested by @Sergei.
+
+Approach
+Set level=0 for the root.
+Use a loop to transverse. If dir=="../" level-=(level>0) , else if dir!="./" level++
+level is the answer
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(1)

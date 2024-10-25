@@ -1,0 +1,24 @@
+Intuition
+To solve the problem of calculating the average waiting time for customers in a restaurant, we use a simple iterative approach. The key steps involve simulating the process of serving each customer and calculating the total waiting time.
+
+Approach
+Input Handling:
+
+customers is a 2D array where each element is an array representing a customer's arrival time and cooking time.
+Initialization:
+
+N stores the number of customers.
+serviceTime is initialized to the sum of the arrival time and cooking time of the first customer.
+totalWait is initialized to the waiting time of the first customer.
+Loop Through Customers:
+
+For each customer from the second one onwards:
+Check if the chef needs to wait for the customer to arrive.
+Update serviceTime to include the cooking time of the current customer.
+Calculate the waiting time for the current customer and add it to totalWait.
+Calculate and Return Average:
+
+Divide totalWait by N to get the average waiting time.
+Complexity
+Time complexity: O(N) [N = Row size]
+Space complexity: 0(1)

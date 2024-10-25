@@ -1,0 +1,15 @@
+Intuition
+The key insights behind this intution is:
+
+If the array has less than 5 elements, the minimum difference will be 0, as we can't form two groups of 4 elements.
+Sorting the array in ascending order allows us to easily identify the 4 smallest and 4 largest elements.
+By calculating the difference between the sum of the 4 largest elements and the sum of the 4 smallest elements, we can find the minimum difference.
+Approach
+The approach used in the provided code is to find the minimum difference between the sum of the largest 4 elements and the sum of the smallest 4 elements in the given array A.
+The intuition behind this approach is that the minimum difference will be achieved by either:
+
+Removing the 4 smallest elements and keeping the 4 largest elements.
+Removing the 4 largest elements and keeping the 4 smallest elements.
+Complexity
+Time complexity:O(n log n)
+Space complexity:O(1)

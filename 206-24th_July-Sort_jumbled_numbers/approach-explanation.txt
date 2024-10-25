@@ -1,0 +1,31 @@
+Intuition
+The problem requires sorting an array of integers (nums) based on a custom digit-to-digit mapping (mapping). Each digit in the numbers of nums is transformed according to the mapping array. We then need to sort the numbers in nums based on these transformed numbers.
+
+The key steps are:
+
+Transform each number in nums using the given mapping.
+Pair each transformed number with its original number.
+Sort these pairs based on the transformed numbers.
+Extract and return the original numbers in the order determined by the sorted transformed numbers.
+Approach
+Initialization:
+
+Create an array result to store the final sorted numbers.
+Create a 2D array map to store pairs of transformed numbers and their corresponding original numbers.
+Transform Numbers:
+
+Iterate through each number in nums.
+For each number:
+If the number is 0, directly map it using mapping[0].
+Otherwise, decompose the number into its digits, map each digit using mapping, and reconstruct the transformed number.
+Store the transformed number and the original number as a pair in the map array.
+Sort Pairs:
+
+Sort the map array based on the transformed numbers (first element of each pair).
+Extract Sorted Numbers:
+
+Iterate through the sorted map array.
+Extract the original numbers (second element of each pair) and store them in result.
+Return Result:
+
+Return the result array which contains the original numbers sorted based on the transformed numbers.

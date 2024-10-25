@@ -1,0 +1,26 @@
+Intuition
+Very similar to the problem Leetcode 735. Asteroid Collision
+
+Approach
+Build a container robot over the info pair (position, idx)
+Sort robot according to greater, since the stack will store the idx for the robot with 'L'
+Use C++ std::vector to do the job as a stack
+Transverse the robot & push its index i to the stack, when the direction of robot is 'L'
+Otherwise proceed the while loop
+while(!stack.empty() && healths[i]>0){//when healths[i]==0 robot is removed
+    int j=stack.back();// idx for the robot[j] on the top of the stack
+    int x=healths[j]-healths[i];//  3 conditions to do
+    if (x>0) healths[j]--, healths[i]=0;// robot[j] survives
+    else if (x<0)// robot[i] survives, remove robot[j] 
+        healths[j]=0, healths[i]--, stack.pop_back();
+    else // both removed
+        healths[i]=healths[j]=0, stack.pop_back();
+}
+Pick up all robots with heath>0 & return ans
+An alternative version is to sort robot w.r.t. the default ordering, the stack will store the index for robot with 'R'. The container stack can use C-array with a variable top.
+Complexity
+Time complexity:
+O(nlogn)
+
+Space complexity:
+O(n)

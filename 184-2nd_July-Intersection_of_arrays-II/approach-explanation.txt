@@ -1,9 +1,12 @@
 Intuition
-Using hash map to opimize the algorithm o(N). Instead of using sorting. It takes O(NlogN). But my solution takes require more space then sorting approach.
+We have to check whether the current element in the current array is also present in the other array that has been given to us, What data structure can we use here?
+
 Approach
-My first thought is using a "Hash_map" to store the elements of 1 array and corresponding frequency into hash map.
-Add the elements of "nums1" into map with corresponding frequency.
-Iterate throught each element of "nums2". If frequency of the element stored in hash map greater than 0. We add this element into "res" and decrease the frequency of this element.
+We simply store one array in a map with all its frequencies, and while iterating the other given array if we encounter the current element of the current array in the map with suitable frequency we will add that element to our answer vector. Also remember that we have to delete any element that has 0 frequncy to avoid adding extra elements to our answer vector.
+
 Complexity
-Time complexity: O(N).
-Space complexity: O(N).
+Time complexity:
+O(n+m) Iterating over the vectors and finding the element in tree map.
+
+Space complexity:
+O(n) An answer vector to return and a map to store elements.

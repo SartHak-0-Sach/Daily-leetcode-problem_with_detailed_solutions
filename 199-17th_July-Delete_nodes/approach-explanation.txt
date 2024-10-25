@@ -1,0 +1,22 @@
+Intuition
+For each node that needs to be deleted, we need to handle its children separately to ensure they become part of the new forest if they exist. The challenge is to do this in a single pass efficiently.
+
+Approach
+Check Node Presence:
+
+A helper function ispresent is used to check if a given node value is in the to_delete list.
+Form Answer:
+
+A recursive function formans processes the tree. It checks if the current node is in the to_delete list. If it is, its children (if any) are added to the result list ans. The function returns true if the node is to be deleted.
+Handle Root:
+
+If the root itself is not in the to_delete list, it is added to the result list ans.
+Recursive Deletion:
+
+Traverse the tree recursively, severing the connections to nodes that are to be deleted and managing the children of these nodes.
+Complexity
+Time complexity:
+The time complexity is O(n⋅m), where n is the number of nodes in the tree and m is the number of nodes in the to_delete list. This is because, for each node, we potentially check against all m nodes in to_delete.
+
+Space complexity:
+The space complexity is O(h), where h is the height of the tree, due to the recursive stack space.

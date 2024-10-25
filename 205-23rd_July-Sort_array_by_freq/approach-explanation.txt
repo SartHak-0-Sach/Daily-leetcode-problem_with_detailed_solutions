@@ -1,0 +1,19 @@
+Intuition
+Given the constraints -100 <= nums[i] <= 100, you can count the frequency of elements using an array where the index represents the value shifted by 100 (i.e., freq[x + 100] for x in nums). Then, sort it using a lambda function, which is efficient in both C++ and Python.
+
+A similar concept can be applied using the Counter class in Python for a one-liner solution, which is slower but acceptable.
+
+Another approach involves using counting sort, which reduces the time complexity to O(n + m).
+
+Approach
+Count the frequency of elements using freq[x + 100] for x in nums. Sort nums with respect to the lambda function [&](int x, int y){ return (freq[x + 100] == freq[y + 100]) ? x > y : freq[x + 100] < freq[y + 100]; }.
+
+The second approach uses counting sort, which is more complex compared to the simpler methods. While it has a linear time complexity, it doesn't provide significant benefits for small test cases. The best performance recorded is 2ms.
+
+Complexity
+Time complexity:
+O(nlogn)
+Counting sort: O(n+m)
+
+Space complexity:
+O(m) where m=max(nums)

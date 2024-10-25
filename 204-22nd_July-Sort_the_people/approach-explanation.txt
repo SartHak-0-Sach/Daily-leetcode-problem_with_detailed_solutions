@@ -1,0 +1,11 @@
+Intuition
+Since we need to sort the names based on decreasing number of their respective heights, we need to sort the heights.
+
+Approach
+Push the pair of heights and names on to the heap.
+Get the names from the heap which will be in the decreasing order of the heights and store them in names vector
+Complexity
+Time complexity:
+O(nlog(n))
+Space complexity:
+O(n)

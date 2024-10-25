@@ -1,0 +1,12 @@
+Approach:
+Base Case Handling:
+
+If the array is null or has only one element, it's already sorted. Return the array as is.
+Merge Sort Function:
+
+Recursively divide the array into two halves until each subarray has one element.
+Merge the subarrays back together in sorted order.
+Merge Function:
+
+Merge two sorted subarrays into a single sorted array.
+Use temporary arrays to hold the elements of the subarrays during merging.

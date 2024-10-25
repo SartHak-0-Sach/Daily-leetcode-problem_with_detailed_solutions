@@ -1,0 +1,24 @@
+Intuition
+This function processes a linked list where segments between consecutive zeroes are summed into new nodes. It starts iterating from the second node (head->next) to skip the initial zero. As it traverses, it accumulates values (c) until it encounters a zero, then creates a new node with the accumulated sum. The resulting linked list consists of these summed nodes, effectively merging segments of nodes between zeroes into single nodes with their aggregated values.
+
+Approach
+Initialization:
+temp starts at head->next to skip the initial zero.
+ans is a new dummy node to construct the result list.
+tempAns points to the dummy node, used to build the result list.
+c is a counter to sum the values between zeroes.
+Traversal and Summation:
+Traverse the linked list using temp.
+If temp is not zero, add its value to c.
+If temp is zero, create a new node with the value c and add it to the result list. Then, reset c to zero.
+Construction of the Result List:
+For each segment of values between zeroes, create a new node and link it to the result list.
+Continue this until the end of the original list.
+The result list is built starting from ans->next to skip the dummy node.
+
+Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(1)

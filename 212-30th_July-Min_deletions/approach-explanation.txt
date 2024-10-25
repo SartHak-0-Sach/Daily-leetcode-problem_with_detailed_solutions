@@ -1,0 +1,12 @@
+Intuition
+Basically, the problem asks you to have all a before b in string s by deleting minimum number of characters from string s.
+The intuition is simple enough. We just need to store how many b come before a at a specific position i in string s.
+This will tell us how many a we have to delete which come after b or how many b we have to delete which come before a.
+In the end, we will count the minimum number of deletions we have to make in order to achieve the string with all a before b.
+Approach
+Create a prefix_b array to store all b from left to right and create a suffix_a array to store all a from right to left.
+Now, at every index i check how many prefix b and suffix a we have to delete by adding prefix_b[i] and suffix_a[i].
+Keep the track of minimum deletions using a variable mini which will be our final answer to return.
+Complexity
+Time complexity: O(n)
+Space complexity: O(n)

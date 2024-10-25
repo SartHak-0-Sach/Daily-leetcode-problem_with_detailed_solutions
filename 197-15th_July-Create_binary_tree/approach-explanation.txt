@@ -1,0 +1,22 @@
+Intuition
+The given Java code constructs a binary tree from a list of descriptions. Each description specifies a parent node, a child node, and whether the child is a left or right child of the parent. Here's a step-by-step explanation of the code:
+
+1. Data Structures:
+
+A HashMap<Integer, TreeNode> called map to store the TreeNode objects by their values.
+A Set called children to keep track of all child nodes.
+2. Populating the Data Structures:
+
+The code iterates over each description in the input array.
+For each description, it extracts the parent value (parent), the child value (child), and whether the child is a left child (isLeft).
+It adds the child value to the children set.
+It retrieves the parent node from the map, or creates a new TreeNode if it doesn't exist.
+Depending on whether the child is left or right (isLeft), it sets the appropriate child reference (left or right) in the parent node.
+It puts both the parent and child nodes into the map.
+3. Identifying the Root:
+
+After processing all descriptions, the code determines the root of the tree by finding a node that is not in the children set.
+The root node is a node that appears as a parent in the descriptions but never as a child.
+4. Returning the Root:
+
+The code retrieves and returns the root node from the map.

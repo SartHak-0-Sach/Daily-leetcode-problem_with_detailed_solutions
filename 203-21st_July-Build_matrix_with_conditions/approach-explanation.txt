@@ -1,0 +1,23 @@
+Intuition
+Use Kahn's algorthm, topological sort.
+Apply for rowConditions, rowConditions to find the ordering in row & in col.
+Then find pos (i, j) for x where 1<=x<=k
+
+2nd approach uses DFS+degree as visited instead of Kahn's algorithm. Moreover the output for the recursive function f(int i) is using std::deque<int> for push front the number i for avoiding of reversing the container.
+
+Approach
+Topological sort can solve the following questions
+2192. All Ancestors of a Node in a Directed Acyclic Graph
+207. Course Schedule
+210. Course Schedule II
+1203. Sort Items by Groups Respecting Dependencies
+
+Kahn's Algorithm is BFS method by removing the edges and decreasing the indegrees.
+
+Use Kahn'salgorithm to define the function vector<int> topo_sort(int k, vector<vector<int>>& conditions)
+apply order_row=topo_sort(k, rowConditions), order_col=topo_sort(k, colConditions)
+If order_row.empty()|| order_col.empty() some conflicts occur then return the empty array
+The rest is to build the answering matrix arr, to find pos (i, j) for each integer x where 1<=x<=k
+Use single for-loop to compute pos_i, pos_j & set arr[pos_i[x]][pos_j[x]]=x
+arr is the answer
+2nd approach uses DFS+degree as visited instead of Kahn's algorithm. Moreover the output for the recursive function f(int i) is using std::deque<int> for push front the number i for avoiding of reversing the container.

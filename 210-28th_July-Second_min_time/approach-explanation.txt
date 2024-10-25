@@ -1,0 +1,32 @@
+Intuition
+Hard problem.
+Since each move takes the same time, it's no need for a priority queue, just a regular queue which holding the info pair (node, distance).
+
+Since it's to find the 2nd min path, it needs 2 containers, say dist, dist2 to hold the distance to the starting node 1.
+
+Approach
+Define the function wtime(int step, int time, int change) to compute the time to take for steps=step; this wtime is dependent on step.
+In the function secondMinimum(int n, vector<vector<int>>& edges, int time, int change) compute the adjacency list adj as in usual for graphical problem.
+Set 2 containers dist(n+1, INT_MAX), dist2(n+1, INT_MAX). The 1 st one is for the min distances; the 2nd one is for the 2nd min distances.
+Set queue q holding the info pair (node, distance); push (1,0)& set dist[1]=0
+Proceed the BFS by a while loop as long as q is not empty; let (x,d) be the element at front of q.
+During the iteration for y in adj[x], newD=d+1, update dist[y], dist2[y] & push (y, newD) to q as follows
+for (int y : adj[x]) {
+    int newD=d+1;
+    if (newD < dist[y]) {
+        dist2[y]=dist[y];
+        dist[y]=newD;
+        q.emplace(y, newD);
+    } 
+    else if (newD>dist[y] && newD<dist2[y]) {
+        dist2[y]=newD;
+        q.emplace(y, newD);
+    }
+}
+steps=dist2[n] is the moves for the 2nd min one takes; its time to take is wtime(steps, time, change)
+Complexity
+Time complexity:
+O(∣V∣+∣E∣)
+
+Space complexity:
+O(∣E∣)

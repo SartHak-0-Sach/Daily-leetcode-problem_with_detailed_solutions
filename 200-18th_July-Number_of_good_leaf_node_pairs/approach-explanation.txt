@@ -1,0 +1,8 @@
+Intuition
+The idea is to first get the path to each leaf node.
+Then, compare each leaf path with every other leaf path to calculate the distance between them.
+Complexity
+Time complexity: O(n 
+2
+ ⋅logn)
+Space complexity: O(n⋅h)

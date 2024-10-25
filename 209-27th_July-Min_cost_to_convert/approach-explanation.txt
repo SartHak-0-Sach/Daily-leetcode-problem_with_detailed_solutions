@@ -1,0 +1,13 @@
+Intuition
+step 1: make graph
+step 2: Floyd-Warshall algorithm to find the minimum transformation costs between all pairs of characters
+
+Approach
+The goal is to transform the string source into the string target using the minimal cost specified in the cost array. The transformation rules are defined by the original and changed arrays, where original[i] can be changed to changed[i] at a cost of cost[i].
+
+Complexity
+Time complexity:
+O(m+n^3)
+
+Space complexity:
+O(n^2)

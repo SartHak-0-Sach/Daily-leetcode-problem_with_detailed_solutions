@@ -1,0 +1,13 @@
+Intuition
+We have to maximimse the bottles that we drink here so we clearly have to also maximise the empty bottles in every turn.
+
+Approach
+To maximise the empty bottles in every turn we simply just have to drink in multiples of numExchange as much as we can and then we get the refills, We will continue this till we run out of sufficient bottles that can get us another refill, in the last we will add the remaining bottles that we did not drink in order to maximise our answer
+
+Complexity
+Time complexity:
+O(n) We have to simulate our answer for different numbottles
+Is there a way to solve this in O(1) somehow? Let me knwo if there is!
+
+Space complexity:
+O(1) We dont need any extra space for our solution

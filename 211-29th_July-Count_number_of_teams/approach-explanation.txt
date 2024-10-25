@@ -1,0 +1,16 @@
+Intuition
+Since we can use the same soldier for multiple teams, we just need to find number of ratings less than index i , mumber of ratings greater than index i which are on the left side of the index i and similarly umber of ratings less than index i , mumber of ratings greater than index i which are on the right side of the index i, multiply and add it to the answer.
+
+Approach
+Iterate over the array.
+For every index i calculate the following:
+lowerThanLeft
+higherThanLeft
+lowerThanRight
+higherThanRight
+Multiply lowerThanLeft and higherThanRight, similarly multiply higherThanLeft and lowerThanRight and add it to answer.
+Complexity
+Time complexity:
+O(n^2)
+Space complexity:
+O(1)

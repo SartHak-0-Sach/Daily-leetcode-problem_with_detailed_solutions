@@ -1,0 +1,14 @@
+Approach and Intuition
+Matrix Construction: We iterate through each cell of the matrix using two nested loops. For each cell (i, j):
+
+If either rowSum[i] or colSum[j] is 0, we set ans[i][j] to 0, as there is no available sum to allocate to this cell.
+Otherwise, we set ans[i][j] to the minimum of rowSum[i] and colSum[j]. This ensures that we do not exceed the required sum for either the current row or the current column.
+We then subtract the allocated value from both rowSum[i] and colSum[j] to reflect the remaining sums needed for the rest of the cells in the current row and column.
+Return Result: After filling in the entire matrix, we return the ans matrix, which now has the desired row and column sums.
+
+Complexity
+Time complexity:
+O(N^2)
+
+Space complexity:
+O(N^2)

@@ -1,0 +1,38 @@
+Intuition
+Consider the Math problem with ref in wiki
+Josephus problem
+
+This problem can be solved with simulation, but it is basically a Math problem. It needs to study for a while.
+
+A simulation C++ using queue is also presented.
+
+Approach
+Let f(n,k) denote the position of the survivor.
+The wiki says:
+
+The position of the survivor in the remaining circle would be f(n−1,k) if counting is started at 1; shifting this to account for the fact that the starting point is (kmodn)+1 yields the recurrence f(n,k)=((f(n−1,k)+k−1)modn)+1, with f(1,k)=1
+
+Use it & done.
+
+I would not say such problems would be easy. The hardest part is to find out & to prove the recurrence. Even LC has just only explained for k=2.
+
+An iterative based on the recurrence is also provided.
+
+Theorem for general Josephus problem
+Let j(n,k,i) denote the ith number should be removed. Then the following recurrence holds
+j(n,k,i+1)≡(k+j(n−1,k,i))(modn)
+where the initial value j(n,k,1)=(k−1)(modn)
+
+Note f(n,k)=j(n,k,n) in Theorem  
+′
+ ≡ 
+′
+  is used, when j(n,k,i+1)≡0 then j(n,k,i+1)=n.
+
+  Complexity
+Time complexity:
+O(n)
+
+Space complexity:
+O(n)
+iterative Version: O(1)

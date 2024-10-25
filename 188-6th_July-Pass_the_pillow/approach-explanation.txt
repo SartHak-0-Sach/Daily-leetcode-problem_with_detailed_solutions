@@ -1,0 +1,21 @@
+Intuition
+similiar to solve 3178. Find the Child Who Has the Ball After K Seconds
+
+Approach
+Modular arithmetic with period N=2*(n-1)
+
+Modular arithmetic x=time%N
+The answer is 1+((x<n)?x:N-x)
+Let us consider the small integer, say n=5
+ 1  2  3  4  5
+ 9  8  7  6
+   10 11 12 13
+17 16 15 14
+N=2×5-2=8, when x>=n, x=time mod N one has to do N-x. Don't forget plus 1.
+
+Complexity
+Time complexity:
+O(1)
+
+Space complexity:
+O(1)
